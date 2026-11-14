@@ -44,18 +44,20 @@ export function marquee(root, opts = {}) {
     st.drag = { x0: e.clientX, sx: st.x, lx: e.clientX, lt: performance.now(), v: 0, moved: false, id: e.pointerId };
     root.classList.add('is-drag');
   });
-  addEventListener('pointermove', (e) => {
+  const onMove = (e) => {
     const d = st.drag; if (!d || e.pointerId !== d.id) return;
     const dx = e.clientX - d.x0; if (Math.abs(dx) > 4 && !d.moved) { d.moved = true; try { root.setPointerCapture(e.pointerId); } catch (_) {} }
     if (!d.moved) return;
     st.x = d.sx + dx; const now = performance.now(); d.v = ((e.clientX - d.lx) / Math.max(1, now - d.lt)) * 1000; d.lx = e.clientX; d.lt = now;
-  }, { passive: true });
+  };
+  addEventListener('pointermove', onMove, { passive: true });
   const end = (e) => { const d = st.drag; if (!d) return; if (d.moved) { st.v = Math.max(-3000, Math.min(3000, d.v)); root.addEventListener('click', (c) => { c.preventDefault(); c.stopPropagation(); }, { capture: true, once: true }); } st.drag = null; root.classList.remove('is-drag'); };
   addEventListener('pointerup', end); addEventListener('pointercancel', end);
   addEventListener('scroll', onScroll, { passive: true });
-  let w = innerWidth; addEventListener('resize', () => { if (Math.abs(innerWidth - w) < 2) return; w = innerWidth; unit = fill(); });
+  let w = innerWidth; const onResize = () => { if (Math.abs(innerWidth - w) < 2) return; w = innerWidth; unit = fill(); };
+  addEventListener('resize', onResize);
   root.classList.add('mq--on');
-  return { destroy() { io.disconnect(); stop(); removeEventListener('scroll', onScroll); } };
+  return { destroy() { io.disconnect(); stop(); removeEventListener('scroll', onScroll); removeEventListener('pointermove', onMove); removeEventListener('pointerup', end); removeEventListener('pointercancel', end); removeEventListener('resize', onResize); } };
 }
 
 if (typeof document !== 'undefined') {

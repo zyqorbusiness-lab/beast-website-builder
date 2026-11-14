@@ -58,3 +58,24 @@ test('vendored guidance provenance is intact', () => {
   assert.ok(existsSync(join(ROOT, 'guidance', 'LICENSE')), 'Apache-2.0 licence file vendored');
   assert.ok(existsSync(join(ROOT, 'guidance', 'THIRD_PARTY_NOTICES')), 'upstream third-party notices vendored');
 });
+
+// Regressions for the v2 audit findings we fixed in our derivative copies (upstream repos untouched).
+test('quote-carousel keeps inactive slides inert (focus cannot enter aria-hidden slides)', () => {
+  const qc = readFileSync(join(ROOT, 'components', 'quote-carousel', 'quote-carousel.js'), 'utf8');
+  assert.match(qc, /toggleAttribute\('inert', k !== n\)/, 'inactive slides must get the inert attribute');
+  assert.doesNotMatch(qc, /toggleAttribute\('inert', false\)/, 'must not strip inert from every slide');
+});
+
+test('marquee destroy() removes every window-level listener it adds', () => {
+  const mq = readFileSync(join(ROOT, 'components', 'marquee', 'marquee.js'), 'utf8');
+  const destroy = mq.slice(mq.indexOf('destroy()'));
+  for (const ev of ['pointermove', 'pointerup', 'pointercancel', 'scroll', 'resize']) {
+    assert.match(destroy, new RegExp(`removeEventListener\\('${ev}'`), `destroy must remove window ${ev} listener`);
+  }
+});
+
+test('pricing-table returns destroy() that removes its window resize listener', () => {
+  const pr = readFileSync(join(ROOT, 'components', 'pricing-table', 'pricing-table.js'), 'utf8');
+  assert.doesNotMatch(pr, /^\s*addEventListener\('resize', \(\)/m, 'resize listener must be named so it can be removed');
+  assert.match(pr, /destroy\(\) \{ removeEventListener\('resize', onResize\); \}/, 'destroy must remove the resize listener');
+});

@@ -1,7 +1,7 @@
 # Beast Website Builder
 
 One free toolkit for designing and building premium websites with an AI coding
-agent: **37 design skills** that teach the craft, **14 production UI
+agent: **36 design skills** that teach the craft, **14 production UI
 components** you can drop in, **203 modern-web use-case guides with a search
 CLI** that keep the code current, and a **workflow** that ties them together
 with an evidence gate before anything ships.
@@ -43,7 +43,8 @@ CLI directly does not. Details in [guidance/VENDORED.json](guidance/VENDORED.jso
 
 ## What's inside
 
-- **[skills/](skills/README.md)** - 37 self-contained skills. Each is a folder
+- **[skills/](skills/README.md)** - 36 self-contained skills (37 entries
+  including the index README). Each skill is a folder
   an agent (or a person) can read: `SKILL.md` with rules, numbers and reasons,
   runnable scripts, a working example and a pre-ship checklist. Start with
   [premium-website-playbook](skills/premium-website-playbook/) - it names the

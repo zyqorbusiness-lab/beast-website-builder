@@ -31,8 +31,10 @@ source of truth; this file is the summary.
 
 ## Licence review status
 
-The source portfolio repo ran a full credit audit (519 credit files,
-2026-10-28 → resolved 2026-10-31): Fontshare fonts were replaced with OFL
+The source portfolio repo ran a credit audit (519 credit files in the
+component/asset audit scope, 2026-10-28 → resolved 2026-10-31; a later audit
+counted 713 credit files across the full deployed site tree): Fontshare fonts
+were replaced with OFL
 alternatives and all Mixkit footage removed. This repo inherits only the
 already-cleaned component + skill assets. 101 of the portfolio's other asset
 records remain "licence under review" in the source repo; none of those files

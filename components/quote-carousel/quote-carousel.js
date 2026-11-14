@@ -15,7 +15,7 @@ export function quoteCarousel(root, opts = {}) {
   const update = () => {
     const max = track.scrollWidth - track.clientWidth; const p = max > 0 ? track.scrollLeft / max : 0;
     if (bar) bar.style.transform = `scaleX(${(0.12 + p * 0.88).toFixed(4)})`;
-    const n = nearest(); if (n !== active) { active = n; slides.forEach((s, k) => { s.classList.toggle('is-active', k === n); s.setAttribute('aria-hidden', k === n ? 'false' : 'true'); s.toggleAttribute('inert', false); }); if (count) count.textContent = `${String(n + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`; }
+    const n = nearest(); if (n !== active) { active = n; slides.forEach((s, k) => { s.classList.toggle('is-active', k === n); s.setAttribute('aria-hidden', k === n ? 'false' : 'true'); s.toggleAttribute('inert', k !== n); }); if (count) count.textContent = `${String(n + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`; }
   };
   let raf = 0; track.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); }, { passive: true });
   prev && prev.addEventListener('click', () => { stop(true); go(active - 1); });

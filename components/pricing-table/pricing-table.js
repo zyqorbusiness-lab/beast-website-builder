@@ -54,10 +54,11 @@ export function pricing(root) {
     t.addEventListener('click', () => select(i));
     t.addEventListener('keydown', (e) => { const n = tabs.length; const k = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: n - 1 }[e.key]; if (k === undefined) return; e.preventDefault(); select((k + n) % n, true); });
   });
-  addEventListener('resize', () => movePill(tabs[idx], false));
+  const onResize = () => movePill(tabs[idx], false);
+  addEventListener('resize', onResize);
   (document.fonts?.ready || Promise.resolve()).then(() => movePill(tabs[idx], false));
   select(+root.dataset.start || 0);
-  return { select };
+  return { select, destroy() { removeEventListener('resize', onResize); } };
 }
 if (typeof document !== 'undefined') {
   const init = () => document.querySelectorAll('[data-pricing]').forEach((el) => pricing(el));
