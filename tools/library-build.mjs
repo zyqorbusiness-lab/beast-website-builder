@@ -12,6 +12,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+if (!fs.existsSync(path.join(ROOT, 'site', 'library'))) { console.error('library-build: no site/library tree in this repo - the component library lives in the source repo (best-website-designer). Nothing to do here.'); process.exit(2); }
 const LIB = path.join(ROOT, 'site', 'library');
 const OUT = path.join(LIB, 'library.json');
 const args = process.argv.slice(2);

@@ -37,6 +37,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = path.join(ROOT, 'site'); const LIB = path.join(SITE, 'library');
+if (!fs.existsSync(LIB)) { console.error('qa-library: no site/library tree in this repo - library QA runs in the source repo (best-website-designer). Nothing to do here.'); process.exit(2); }
 const argv = process.argv.slice(2);
 const has = (k) => argv.includes(k); const val = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
 const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);

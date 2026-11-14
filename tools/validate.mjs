@@ -127,5 +127,14 @@ try {
   fail(`playbook route lint: ${String(e.stdout || e.message).trim().split('\n').pop()}`);
 }
 
+// 9. Credit gate: every asset in site/, skills/ and components/ has a valid credit file
+// (the documented undecided groups are allowed, same as the original workflow)
+try {
+  execFileSync(process.execPath, [join(ROOT, 'tools', 'credits-check.mjs'), '--allow-flagged'], { cwd: ROOT, stdio: 'pipe' });
+  ok('credit gate');
+} catch (e) {
+  fail(`credit gate: ${String(e.stdout || e.message).trim().split('\n').pop()}`);
+}
+
 console.log(failures ? `\n${failures} FAILURES` : '\nvalidate: PASS');
 process.exit(failures ? 1 : 0);

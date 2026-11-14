@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LIB = path.join(ROOT, 'site', 'library');
+if (!fs.existsSync(LIB)) { console.error('new-concept: no site/library tree in this repo - concepts are scaffolded in the source repo (best-website-designer). Nothing to do here.'); process.exit(2); }
 const args = process.argv.slice(2);
 const ID = (args.find((a) => !a.startsWith('--')) || '').toUpperCase();
 const force = args.includes('--force'), offline = args.includes('--offline');

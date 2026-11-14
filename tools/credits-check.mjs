@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // credits-check.mjs — dependency-free credit gate for the Zyqor repo (Sujon's credit rule, Oct 28 2026).
-// Walks site/ and skills/, lists every asset file by extension, and FAILs any asset without a valid credit file:
+// Walks site/, skills/ and components/, lists every asset file by extension, and FAILs any asset without a valid credit file:
 //   <asset>.credit.json next to it (a split file x.glb.part1 uses x.glb.credit.json), or one credit.json in the asset's own
 //   folder (a folder holding one asset, e.g. a frame sequence). Valid = all keys present and non-empty, licence on the allow-list.
 // It also FAILs a CC BY / CC BY-SA asset whose attribution is not visible on the pages that use it (index.html + m.html of the
@@ -89,7 +89,7 @@ function visibleOn(page, c) {
   const names = who.split(/,| and /).map((s) => norm(s).trim()).filter((s) => s.length > 2);
   return names.length > 0 && names.some((n) => txt.includes(n)) && /cc by|creative commons|cc-by/.test(txt);
 }
-const files = [...walk(SITE), ...walk(path.join(ROOT, 'skills'))].sort();
+const files = [...walk(SITE), ...walk(path.join(ROOT, 'skills')), ...walk(path.join(ROOT, 'components'))].sort();
 const rows = []; let fail = 0, review = 0, ok = 0;
 for (const f of files) {
   const rel = path.relative(ROOT, f); const cp = creditFor(f); const row = { file: rel, credit: cp && path.relative(ROOT, cp), problems: [] };

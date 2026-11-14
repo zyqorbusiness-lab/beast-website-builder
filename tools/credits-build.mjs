@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// credits-build.mjs — dependency-free. Reads every credit file under site/ and skills/ (<asset>.credit.json and folder credit.json)
+// credits-build.mjs — dependency-free. Reads every credit file under site/, skills/ and components/ (<asset>.credit.json and folder credit.json)
 // and writes CREDITS_generated.md grouped by home / Lab demo / library concept / shared kit / skill, one row per source
 // (files sharing the same source + licence are folded into one row with their file list).
 // Usage: node tools/credits-build.mjs [--out CREDITS_generated.md]
@@ -12,6 +12,9 @@ const creds = [];
   const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.name.endsWith('.credit.json') || e.name === 'credit.json') creds.push(p); } })(path.join(ROOT, 'site'));
 (function walk(d) { if (!fs.existsSync(d)) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name);
   if (e.isDirectory() && e.name !== 'node_modules') walk(p); else if (e.name.endsWith('.credit.json') || e.name === 'credit.json') creds.push(p); } })(path.join(ROOT, 'skills'));
+  (function walk(d) { if (!fs.existsSync(d)) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+  const p = path.join(d, e.name);
+  if (e.isDirectory() && e.name !== 'node_modules') walk(p); else if (e.name.endsWith('.credit.json') || e.name === 'credit.json') creds.push(p); } })(path.join(ROOT, 'components'));
 function group(rel) {
   let m;
   if ((m = rel.match(/^site\/(?:assets\/)?lab\/([\w-]+)\//))) return ['Lab demos', m[1]];

@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = join(ROOT, 'site');
+if (!existsSync(SITE)) { console.error('check-links: no site/ tree in this repo - this tool checks the source repo\'s deployed site (best-website-designer). Nothing to do here.'); process.exit(2); }
 const ALL = process.argv.includes('--all');
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36';
 // Hosts that wall automated requests; a 403/429 from them is reported, not counted as broken.
