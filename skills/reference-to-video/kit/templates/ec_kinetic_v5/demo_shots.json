@@ -1,0 +1,449 @@
+{
+ "duration": 8.2,
+ "title": "face-lock hook — v5 demo",
+ "refs": [
+  "breakdowns/ref8_breakdown",
+  "breakdowns/pin_kinetic03"
+ ],
+ "voice": [],
+ "music": {
+  "file": "../../music/digital_clouds_175.mp3",
+  "db": -12
+ },
+ "shots": [
+  {
+   "a": 0,
+   "b": 3.55,
+   "bg": "paper",
+   "push": 5,
+   "cards": [
+    {
+     "file": "assets/card_ref.png",
+     "x": 330,
+     "y": 800,
+     "t": 0.05,
+     "rot": -7,
+     "scale": 112
+    },
+    {
+     "file": "assets/card_ai.png",
+     "x": 752,
+     "y": 870,
+     "t": 0.62,
+     "rot": 6,
+     "scale": 112
+    }
+   ],
+   "captions": [
+    {
+     "y": 330,
+     "style": {
+      "size": 40,
+      "font": "Inter-Medium",
+      "tracking": 220,
+      "fill": "#6E675E",
+      "shadow": false
+     },
+     "tokens": [
+      {
+       "w": "FACE-LOCK",
+       "t": 0.0,
+       "s": "r"
+      },
+      {
+       "w": "TIP",
+       "t": 0.18,
+       "s": "r"
+      }
+     ],
+     "end": 3.5
+    },
+    {
+     "y": 1420,
+     "end": 1.28,
+     "tokens": [
+      {
+       "w": "AI",
+       "t": 0.25,
+       "s": "b"
+      },
+      {
+       "w": "photo",
+       "t": 0.56,
+       "s": "b"
+      },
+      {
+       "w": "ban",
+       "t": 0.83,
+       "s": "r"
+      },
+      {
+       "w": "gayi...",
+       "t": 1.0,
+       "s": "r"
+      }
+     ]
+    },
+    {
+     "y": 1420,
+     "end": 2.64,
+     "tokens": [
+      {
+       "w": "lekin",
+       "t": 1.57,
+       "s": "r"
+      },
+      {
+       "w": "chehra",
+       "t": 2.0,
+       "s": "b"
+      },
+      {
+       "w": "tumhara",
+       "t": 2.27,
+       "s": "g"
+      }
+     ]
+    },
+    {
+     "y": 1420,
+     "end": 3.5,
+     "tokens": [
+      {
+       "w": "lag",
+       "t": 2.68,
+       "s": "r"
+      },
+      {
+       "w": "hi",
+       "t": 2.83,
+       "s": "r"
+      },
+      {
+       "w": "nahi",
+       "t": 2.92,
+       "s": "i"
+      },
+      {
+       "w": "raha?",
+       "t": 3.05,
+       "s": "b"
+      }
+     ]
+    }
+   ],
+   "cursor": {
+    "path": [
+     [
+      2.45,
+      [
+       1010,
+       1780
+      ]
+     ],
+     [
+      2.95,
+      [
+       812,
+       940
+      ]
+     ]
+    ],
+    "taps": [
+     3.02
+    ],
+    "end": 3.55
+   },
+   "out": {
+    "type": "zoom",
+    "t": 3.55
+   }
+  },
+  {
+   "a": 3.55,
+   "b": 6.0,
+   "bg": "studio",
+   "push": 4,
+   "bg_opts": {
+    "floorY": 1530
+   },
+   "cards": [
+    {
+     "file": "assets/phone0.png",
+     "x": 540,
+     "y": 860,
+     "t": 3.6,
+     "scale": 95,
+     "rot": 0,
+     "float": 4,
+     "sfx": "whoosh_soft"
+    },
+    {
+     "file": "assets/chip.png",
+     "x": 420,
+     "y": 1150,
+     "t": 4.55,
+     "rot": -5,
+     "scale": 90
+    }
+   ],
+   "captions": [
+    {
+     "y": 1680,
+     "end": 4.52,
+     "tokens": [
+      {
+       "w": "ChatGPT",
+       "t": 3.64,
+       "s": "b"
+      },
+      {
+       "w": "ko",
+       "t": 4.18,
+       "s": "r"
+      },
+      {
+       "w": "pehle",
+       "t": 4.33,
+       "s": "r"
+      }
+     ]
+    },
+    {
+     "y": 1680,
+     "end": 5.95,
+     "tokens": [
+      {
+       "w": "apni",
+       "t": 4.55,
+       "s": "r"
+      },
+      {
+       "w": "reference photo",
+       "t": 4.76,
+       "s": "g"
+      },
+      {
+       "w": "do.",
+       "t": 5.5,
+       "s": "b"
+      }
+     ]
+    }
+   ],
+   "cursor": {
+    "path": [
+     [
+      4.0,
+      [
+       1000,
+       1760
+      ]
+     ],
+     [
+      4.42,
+      [
+       330,
+       1362
+      ]
+     ],
+     [
+      5.1,
+      [
+       330,
+       1362
+      ]
+     ],
+     [
+      5.42,
+      [
+       756,
+       1362
+      ]
+     ]
+    ],
+    "taps": [
+     4.48,
+     5.5
+    ],
+    "end": 6.0
+   },
+   "out": {
+    "type": "glitch",
+    "t": 6.0,
+    "flash": false
+   }
+  },
+  {
+   "a": 6.0,
+   "b": 8.2,
+   "bg": "paper",
+   "push": 4,
+   "titles": [
+    {
+     "text": "SAVE",
+     "x": 540,
+     "y": 1010,
+     "t": 6.72,
+     "style": {
+      "font": "Inter-Bold",
+      "size": 330,
+      "fill": "#141414",
+      "tracking": -30,
+      "grad": "ember"
+     },
+     "opts": {
+      "out": false,
+      "sfx": "whoosh_soft"
+     }
+    }
+   ],
+   "captions": [
+    {
+     "y": 700,
+     "end": 8.2,
+     "tokens": [
+      {
+       "w": "ye",
+       "t": 6.15,
+       "s": "r"
+      },
+      {
+       "w": "reel",
+       "t": 6.42,
+       "s": "b"
+      }
+     ]
+    },
+    {
+     "y": 1200,
+     "end": 8.2,
+     "style": {
+      "size": 120
+     },
+     "tokens": [
+      {
+       "w": "kar",
+       "t": 7.02,
+       "s": "i"
+      },
+      {
+       "w": "lo!",
+       "t": 7.18,
+       "s": "i"
+      }
+     ]
+    },
+    {
+     "y": 1640,
+     "end": 8.2,
+     "style": {
+      "size": 46,
+      "font": "Inter-Medium",
+      "tracking": 0
+     },
+     "tokens": [
+      {
+       "w": "@zyqor.studio",
+       "t": 7.45,
+       "s": "r"
+      }
+     ]
+    }
+   ],
+   "cards": [
+    {
+     "file": "assets/bookmark.png",
+     "x": 540,
+     "y": 1420,
+     "t": 7.25,
+     "scale": 52,
+     "sfx": "ding",
+     "stay": true,
+     "float": 5
+    }
+   ]
+  }
+ ],
+ "caption": {
+  "size": 108,
+  "gap": 30
+ },
+ "_note": "Portable demo: `python3 tools/ec_reel.py tools/templates/ec_kinetic_v5/demo_shots.json --dry-run` then `python3 tools/qc_v5.py --spec <this file> --jsx tools/templates/ec_kinetic_v5/build/reel.jsx` (no EffectCraft needed). Add your own voice file under 'voice'; run tools/get_audio.sh for the music bed. 'refs'/'breakdowns' point at this kit's breakdowns/ folders; pinterest_sources here is the example plan from ref8.",
+ "breakdowns": [
+  "breakdowns/ref8_breakdown"
+ ],
+ "make_it_ours": [
+  "Palette: kit gradient presets instead of the reference's blue/cyan",
+  "Set: paper/studio background instead of the white void",
+  "Text: Inter + Instrument Serif italic accent, gradient keyword"
+ ],
+ "pinterest_sources": {
+  "music": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/848365648600477893/",
+    "note": "music bed idea (track credited on the pin)",
+    "creator": "Jeen Realer 🎙",
+    "file": ""
+   }
+  ],
+  "sfx": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/998321442477942360/",
+    "note": "5 essential sfx (whoosh/pop/click set)",
+    "creator": "Echo Grafix",
+    "file": ""
+   },
+   {
+    "pin_url": "https://www.pinterest.com/pin/1138214505863761721/",
+    "note": "hook sfx pack",
+    "creator": "Graphic House | Branding & Marketing Agency",
+    "file": ""
+   }
+  ],
+  "broll": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/805792558372903371/",
+    "note": "magazine flip b-roll",
+    "creator": "POLÈNE",
+    "file": ""
+   }
+  ],
+  "subject": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/671599363236245110/",
+    "note": "framed-card talking head layout",
+    "creator": "Motion Pet",
+    "file": ""
+   }
+  ],
+  "effect": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/706854104018611568/",
+    "note": "warm light leak for the 26.6 s burn",
+    "creator": "ايساك a.",
+    "file": ""
+   },
+   {
+    "pin_url": "https://www.pinterest.com/pin/1030057745993566220/",
+    "note": "old film overlay / grain",
+    "creator": "A r s e n i c",
+    "file": ""
+   }
+  ],
+  "background": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/982629212453903851/",
+    "note": "peach grid background",
+    "creator": "Internet Wala Aadil",
+    "file": ""
+   },
+   {
+    "pin_url": "https://www.pinterest.com/pin/1024217140226877046/",
+    "note": "paper texture plate",
+    "creator": "Charli<3",
+    "file": ""
+   }
+  ]
+ }
+}

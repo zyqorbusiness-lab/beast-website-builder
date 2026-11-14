@@ -1,0 +1,39 @@
+NOTICE
+======
+
+This repository bundles third-party open-source work. Including it here does
+not imply that any upstream author or organisation endorses this repository,
+Zyqor Studio, or any site built with it.
+
+1. Modern Web Guidance (guidance/)
+   Copyright Google LLC and contributors. Licensed under the Apache License,
+   Version 2.0 (guidance/LICENSE). Vendored unmodified from the npm package
+   modern-web-guidance 1.0.0; see guidance/VENDORED.json for the exact
+   upstream, version, content build and update path, and
+   guidance/THIRD_PARTY_NOTICES for upstream's own notices.
+   Upstream: https://github.com/GoogleChrome/modern-web-guidance
+   Docs:     https://developer.chrome.com/docs/modern-web-guidance
+   This repository is an independent bundle and is not a Google product.
+
+2. three.js (components/_shared/vendor/three/)
+   MIT licence, Copyright 2010-2026 three.js authors.
+   https://github.com/mrdoob/three.js
+
+3. Fonts (components/_shared/assets/fonts/)
+   Bricolage Grotesque (Mathieu Triay), Archivo (Omnibus-Type),
+   Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad),
+   JetBrains Mono (JetBrains) - all SIL Open Font License 1.1.
+
+4. Assets (components/_shared/assets/hdri/, models/)
+   "Studio Small 09" HDRI by Sergej Majboroda and "Binoculars" model by
+   Derek Wight, both Poly Haven, CC0 1.0 (courtesy credits kept).
+
+5. scroll-world
+   Engine rules adapted into the motion/scroll skills, MIT licence,
+   Copyright (c) 2026 cyw. https://github.com/oso95/scroll-world
+   Point-by-point map: docs/beast/SKILLS_SOURCE_MAP.md.
+
+6. Gravitas (methodology credit, not vendored)
+   The workflow's evidence rules in WORKFLOW.md credit Gravitas by
+   udaysharmadev (MIT), https://github.com/udaysharmadev/Gravitas -
+   the six invariants are summarised there and linked, not copied.

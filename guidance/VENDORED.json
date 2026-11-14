@@ -1,0 +1,13 @@
+{
+  "upstream": "https://github.com/GoogleChrome/modern-web-guidance",
+  "upstream_source_repo": "https://github.com/GoogleChrome/modern-web-guidance-src",
+  "npm_package": "modern-web-guidance",
+  "npm_version": "1.0.0",
+  "skill_content_build": "2026_11_09-5bcc021b",
+  "vendored_on": "2026-11-14",
+  "vendored_from": "npm tarball modern-web-guidance-1.0.0.tgz (unmodified, includes Apache-2.0 LICENSE and THIRD_PARTY_NOTICES)",
+  "licence": "Apache-2.0",
+  "stewards": "Google Chrome, Microsoft Edge, Mozilla Firefox and MDN teams (per upstream README)",
+  "telemetry_note": "The CLI collects anonymous usage data unless DISABLE_TELEMETRY=1. This repo's wrapper (tools/guidance.mjs, `npm run guidance`) sets DISABLE_TELEMETRY=1 by default.",
+  "update": "Run `npm run update-guidance` to re-vendor the latest npm release and rewrite this file."
+}

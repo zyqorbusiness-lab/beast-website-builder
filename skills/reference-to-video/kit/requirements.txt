@@ -1,0 +1,10 @@
+numpy
+pillow
+opencv-python   # face detection in analyze_ref.py / build_ref3.py
+faster-whisper  # word timings (transcribe_words.py)
+markdown
+yt-dlp          # ref_breakdown.py / pin_download.py links
+requests        # pin_download.py
+scipy          # audio_gap.py regression / correlation
+fonttools      # fx_extrude_text.py opens the woff2 fonts
+brotli         # woff2 decompression for fonttools

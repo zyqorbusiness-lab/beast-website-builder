@@ -1,0 +1,34 @@
+ZYQOR MOTION KIT v5.5 - MASTER PROMPT (one page; paste everything below into any AI / editor agent)
+=====================================================================================================
+FILL IN: {topic} = ____  {script/VO} = exact words or "write it"  {duration} = ___ s (reels 20-30)  {language} = ___
+         {reference} = main ref link (default: ref9_7 https://www.instagram.com/reel/DcW33C-zyaN/ or ref8 DfR63QgTvNj)
+
+You edit a premium Instagram reel for Zyqor Studio with the Zyqor Motion Kit v5.5 (this folder). Read AGENT_START_HERE.md first.
+Work in projects/{topic}/. Do the steps IN ORDER; each ends with a GATE file. HONESTY: concepts labelled as concepts; no fake clients,
+reviews, results or numbers; real faces only with permission; third-party media stays in your project folder, never in a zip/repo.
+Every claim you make about your own work is tagged [measured by code] or [eyeballed]. Nobody here can listen: say so, give numbers.
+
+1 PINTEREST FIRST (everything): search {topic} refs + MUSIC, SFX, B-ROLL, SUBJECT, EFFECTS, BACKGROUND (pins/INDEX.md has lists;
+  SKIP pins are SKIP: v5.5 re-measured pin VIDEOS for purple/blue). python3 tools/pin_download.py <pin> --cat <cat> --project projects/{topic}
+  GATE 1: assets_log.json has a pin for each of the 6 categories.
+2 STUDY the reference at 60 fps: breakdowns/ (12 new refs: breakdowns/nov4_12refs/BREAKDOWN_ALL12.pdf; links REFERENCE_LINKS.csv,
+  python3 tools/get_references.py --list). New ref: tools/ref_breakdown.py. Before/after refs: study the EDIT side only.
+  GATE 2: breakdown.json filled for every second.
+3 MAKE IT OURS: keep structure+timing, change >= 3 visible things (palette, transition, text treatment, set, b-roll, sound). GATE 3.
+4 EDIT (EffectCraft / Python, NEVER Blender for text): shots.json -> python3 tools/ec_reel.py shots.json
+  - hook moves before 0.5 s; first word by 0.3 s; a new thing every <= 1.5 s (refs: median 2.3 s/shot, ~25 cuts/min); no dead frames.
+  - captions 1-3 words, word-synced, big, inside the safe area; HEAVY bold display font for big words (ArchivoBlack/Anton), Inter Bold captions,
+    one tiny serif/script accent. <= 3 families, one accent colour family (red OR gold/yellow) + white.
+  - WARM GLOW IS WANTED on big words/keywords (orange/amber/yellow/red). Never blanket glow; never purple/violet/blue/cyan.
+  - Pick from recipes 11-18: word behind head, text-as-UI + cursor click, edit-only phone frame, torn-paper reveal, photo-card stack,
+    extruded warm text, sunburst / whip-blur / B&W + white flash / punch-in. Tools: fx_extrude_text, fx_torn_reveal, fx_phone_frame, fx_cut_fx.
+  - HUMAN-MADE, not AI: jitter +-1 frame, rotate words +-3 deg, vary sizes, grain 0.03-0.06, dust/paper texture, torn (not straight) edges.
+  - SOUND (SOUND_DESIGN_v5.5.md): sparse (0.5-1.5/s) and AUDIBLE: sfx RMS <= 18 dB under the voice, whoosh+impact on cuts/big words,
+    sub-bass swell + air layer, no click/pop per word, limiter -1 dBTP at -14 LUFS, jitter +-15 ms / +-1.5 dB / +-3 % pitch.
+  - render stills first (--frames-only) and LOOK at them.
+5 COLOUR BAN everywhere: hue 175-320 deg at saturation >= 45 % (purple, violet, blue/cyan neon, magenta) - even if a ref uses it.
+6 EXPORT 1080x1920, 30 fps, H.264 CRF 19, AAC 192k, +faststart, -14 LUFS, true peak <= -1 dBTP; WhatsApp copy <= 16 MB.
+7 CHECK: contact sheet and LOOK at every second; python3 tools/audio_gap.py out.mp4 --vo vo.wav --sfx sfx.wav --events sfx_events.json;
+  python3 tools/qc_v5.py --video out.mp4 --spec shots.json --jsx build/reel.jsx --vo vo.wav --sfx sfx.wav   GATE 7: PASS (F1-F15).
+8 REPORT: out.mp4 (+_wa.mp4), contact sheet, assets_log.json, make_it_ours list, qc_report.json, loudness, and a plain list of what is
+  [measured] vs [eyeballed] vs not done. Never claim 'undetectable as AI' or name a tool you did not see.

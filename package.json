@@ -1,0 +1,15 @@
+{
+  "name": "beast-website-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zyqor Studio's website-building toolkit: premium design skills + 14 reusable components + vendored Modern Web Guidance (Google Chrome, Apache-2.0) + an evidence-driven build workflow.",
+  "type": "module",
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "guidance": "node tools/guidance.mjs",
+    "validate": "node tools/validate.mjs",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "update-guidance": "node tools/update-guidance.mjs"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}
