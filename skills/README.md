@@ -2,7 +2,7 @@
 
 Each folder here is one self-contained skill you can download and use on your own projects: a written method (`SKILL.md`, readable by people and by AI coding agents), a working example, starter code, a QA checklist and an MIT licence. Every example was checked at 1440x900, 390x844 and 360x740 with 0 console errors before it shipped.
 
-## Website-design skills (the core of this repo, 18 skills + 6 tool skills = 24)
+## Website-design skills (the core of this repo, 18 skills; the 6 tool skills are under Tools and techniques below)
 
 Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how to design and build unique, premium, advanced websites. Desktop is the top bar ("PC me no compromise"); the phone matches it. Open [`premium-website-playbook`](premium-website-playbook/) first: it says which skill to use at each step. Each skill below folds in the points from his design Drive and from scroll-world (map: [`docs/beast/SKILLS_SOURCE_MAP.md`](../docs/beast/SKILLS_SOURCE_MAP.md)).
 
@@ -28,7 +28,7 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`client-site-delivery-workflow`](client-site-delivery-workflow/) | Brief → build → QA → deploy (Vercel / sites.tab.bot) → handover, for client and concept sites: intake questions, scope, staging, evidence, Search Console, credits, handover pack. `brief.mjs`, `handover.mjs`. |
 
 
-## Video, motion graphics and sound (7 skills, added 3 Nov 2026; v4 the same day)
+## Video, motion graphics and sound (8 skills, added 3 Nov 2026; v4 the same day)
 
 Sujon, 3 Nov 2026: the HTML/CSS "3D" promos looked cheap next to his reference reels (real 3D + After Effects). These skills replace it with real 3D from Blender, compositing in EffectCraft (the free After Effects alternative from ArtCraft he picked), Pinterest references measured into numbers, and scripted sound design. Order: research → plan → Blender → EffectCraft → sound → QA.
 
@@ -41,8 +41,9 @@ Sujon, 3 Nov 2026: the HTML/CSS "3D" promos looked cheap next to his reference r
 | [`effectcraft-compositing`](effectcraft-compositing/) | After-Effects-style comps from JSX scripts with `effectcraft-cli`: gradient world, glow, light sweep, zoom-through, whip, RGB split, flash, light leak, shake, captions — plus the ffmpeg fallback for each. |
 | [`sound-design`](sound-design/) | Which sound on which visual event, lead times, levels, 2.4–2.9 hits/s for promos, music drop sync, ducking, −14 LUFS / −1 dBTP; `sfx_mix.py`, `master_mix.sh`, `clean_voice.sh`. |
 | [`artcraft-tools`](artcraft-tools/) | The 15 free ArtCraft apps (PhotoCraft … Craft Anything): what each does, which Adobe/Office app it replaces, maturity as of Nov 2026, and where it fits. |
+| [`reference-frame-breakdown`](reference-frame-breakdown/) | Break a reference video into 60 frames per second and write down, for every second: effect, animation + easing, text, font, colour, glow, background, subject, b-roll, transition, camera and sfx - before editing anything. |
 
-## Process and delivery (3 skills, added 30 Oct 2026)
+## Process and delivery (4 skills, added 30 Oct 2026)
 
 Sujon, 30 Oct 2026: before any website, a full spec and storyboard first; real assets only; a clean handover. These three run around the design skills above: one before the build, one during it, one at the client end.
 
@@ -51,6 +52,7 @@ Sujon, 30 Oct 2026: before any website, a full spec and storyboard first; real a
 | [`build-spec-and-storyboard`](build-spec-and-storyboard/) | **Before any code.** The 10-section build spec (story beats, stack, token tables, assets with licences, section layouts with layering, the 3D/hero part by part, scroll timeline, QA), 4-8 storyboard stills from real assets, and the owner/client review gate. Full worked example (a fictional desk lamp) and `spec-lint.mjs`, which refuses a spec with gaps. | 338 |
 | [`asset-sources-and-licence-check`](asset-sources-and-licence-check/) | Where to get real CC0 / CC BY photos, textures, HDRIs and 3D models (Commons, Poly Haven, ambientCG, Smithsonian, Sketchfab filters, Openverse, Unsplash/Pexels notes), how to verify a licence on the asset's own page, the credit file the gate reads, visible CC BY credits. `licence-probe.mjs` reads the licence from the source's API and drafts the credit file. No AI images. | 320 |
 | [`client-delivery-kit`](client-delivery-kit/) | What we send a client: brief form, price tiers (from $300, up to $10k; tier contents to be filled by Sujon), stage timeline, revision policy, quote/launch message templates and the handover checklist (domain, hosting, credentials, credits, analytics, Search Console). | 293 |
+| [`kit-packaging-and-handoff`](kit-packaging-and-handoff/) | Package a kit / zip / PDF for a person who will hand it to an AI agent: nothing the user ever said may go missing, every script runs from a clean unzip, and claims about what was viewed or checked are exact. | 35 |
 
 Also: the one-page ship checklist [`docs/QA_CHECKLIST.md`](../docs/QA_CHECKLIST.md) and case studies in [`docs/case-studies/`](../docs/case-studies/) (first: [P041 Hotcoal Kitchen, the pizza built three times](../docs/case-studies/P041-hotcoal-kitchen.md)).
 

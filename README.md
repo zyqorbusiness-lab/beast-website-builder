@@ -67,11 +67,12 @@ CLI directly does not. Details in [guidance/VENDORED.json](guidance/VENDORED.jso
   query at each step of each design skill.
 - **[tools/](tools/)** - `validate.mjs` (repo self-check), `guidance.mjs`
   (telemetry-opted-out CLI wrapper), `update-guidance.mjs` (upstream refresh).
-- **[tests/](tests/)** - dependency-free `node:test` smoke tests. A ready
-  GitHub Actions workflow ships as [tools/ci.yml](tools/ci.yml): copy it to
-  `.github/workflows/ci.yml` to enable CI on every push (adding workflow files
-  via API needs a token with the `workflow` scope, so this is a one-time
-  manual step).
+- **[tests/](tests/)** - dependency-free `node:test` smoke tests. CI is live
+  on this repo: [.github/workflows/ci.yml](.github/workflows/ci.yml) runs
+  `validate.mjs`, the smoke tests and a guidance legacy-scan on every push
+  (green on commit `a037b07`, 2026-11-14). Forks get the same workflow
+  automatically. A reference copy is kept at [tools/ci.yml](tools/ci.yml);
+  edit `.github/workflows/ci.yml` and keep the two in sync.
 
 ## The method in one paragraph
 
