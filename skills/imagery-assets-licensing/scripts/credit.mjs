@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// credit.mjs: write and check asset credit files (the same keys and licence allow-list as the repo gate tools/credits-check.mjs).
+// credit.mjs: write and check asset credit files. This is the repo's credit gate
 //   node credit.mjs new <asset> --title T --author A --author-url U --source URL --licence "CC0 1.0" [--licence-url U] [--changes C] [--attribution A] [--verified]
 //   node credit.mjs check <dir>        validate every asset under <dir>; exit 1 on a missing or invalid credit
 // MIT, Zyqor Studio.
 import fs from 'node:fs'; import path from 'node:path';
 const KEYS = ['title', 'author', 'author_url', 'source_url', 'licence', 'licence_url', 'attribution', 'changes', 'downloaded'];
 const EXT = new Set(['.glb', '.gltf', '.bin', '.hdr', '.exr', '.jpg', '.jpeg', '.png', '.webp', '.avif', '.ktx2', '.woff2', '.woff', '.ttf', '.otf', '.mp4', '.webm', '.mov', '.mp3', '.ogg', '.wav', '.m4a', '.svg', '.gif']);
-const ALLOW = [/^CC0 1\.0$/, /^CC BY 4\.0$/, /^CC BY 3\.0$/, /^SIL OFL 1\.1$/, /^MIT$/, /^Apache 2\.0$/, /^Public domain \((NASA|Smithsonian)\)$/];
+const ALLOW = [/^CC0 1\.0$/, /^CC BY 4\.0$/, /^CC BY 3\.0$/, /^SIL OFL 1\.1$/, /^MIT$/, /^Apache 2\.0$/, /^Public domain \((NASA|Smithsonian|USFWS)\)$/];
 const VERIFY_ONLY = [/^Unsplash License$/, /^Pexels License$/];
 const REVIEW = [/^ITF Free Font License/, /^Mixkit /, /^CC BY-SA /, /^CC BY 3\.0 US$/, /^All rights reserved \(own work\)$/];
 const LICENCE_URL = { 'CC0 1.0': 'https://creativecommons.org/publicdomain/zero/1.0/', 'CC BY 4.0': 'https://creativecommons.org/licenses/by/4.0/', 'CC BY 3.0': 'https://creativecommons.org/licenses/by/3.0/', 'SIL OFL 1.1': 'https://openfontlicense.org', 'MIT': 'https://opensource.org/license/mit', 'Apache 2.0': 'https://www.apache.org/licenses/LICENSE-2.0', 'Unsplash License': 'https://unsplash.com/license', 'Pexels License': 'https://www.pexels.com/license/' };

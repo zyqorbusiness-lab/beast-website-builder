@@ -19,7 +19,7 @@ export const SKILLS = [
   ['typography-premium', 'design', 'Font pair, fluid scale, licences, loading', 'node skills/typography-premium/scripts/type-scale.mjs'],
   ['layout-grid-spacing', 'design', 'Named structure, grid, spacing scale, rhythm', 'skills/layout-grid-spacing/SKILL.md'],
   ['copywriting-for-premium-sites', 'content', 'Headlines, body, CTAs, honest proof, no AI wording', 'node skills/copywriting-for-premium-sites/scripts/copy-lint.mjs <site>'],
-  ['imagery-assets-licensing', 'content', 'Real CC0 / CC BY assets, credit files, nothing fake', 'node tools/credits-check.mjs --allow-flagged'],
+  ['imagery-assets-licensing', 'content', 'Real CC0 / CC BY assets, credit files, nothing fake', 'node skills/imagery-assets-licensing/scripts/credit.mjs check .'],
   ['motion-and-scroll-storytelling', 'motion', 'Easing tokens, reveals, pinned chapters, Lenis/GSAP', 'skills/motion-and-scroll-storytelling/SKILL.md'],
   ['scroll-video-hero', 'motion', 'Scroll-scrubbed video hero (encode for scrubbing, fallbacks)', 'skills/scroll-video-hero/SKILL.md'],
   ['threejs-3d-premium', '3d', 'Real models, PBR, HDRI, post, desktop max + phone fallback', 'skills/threejs-3d-premium/SKILL.md'],

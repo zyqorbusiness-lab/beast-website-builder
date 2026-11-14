@@ -119,5 +119,13 @@ for (const p of walk(ROOT)) {
 }
 ok(`${mdChecked} markdown links resolve`);
 
+// 8. Playbook route lint: all routed skills present, named, linked, start commands exist
+try {
+  execFileSync(process.execPath, [join(ROOT, 'skills', 'premium-website-playbook', 'scripts', 'route.mjs'), '--lint', '.'], { cwd: ROOT, stdio: 'pipe' });
+  ok('playbook route lint');
+} catch (e) {
+  fail(`playbook route lint: ${String(e.stdout || e.message).trim().split('\n').pop()}`);
+}
+
 console.log(failures ? `\n${failures} FAILURES` : '\nvalidate: PASS');
 process.exit(failures ? 1 : 0);
