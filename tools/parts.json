@@ -1,0 +1,10 @@
+{
+ "files": [
+  {
+   "path": "skills/model-optimisation-phone/example/models/flight-helmet.glb",
+   "bytes": 14426752,
+   "parts": 6,
+   "sha256": "8ae646737b3425bedcd6baa32721179ab95053768527771131d28479365d5336"
+  }
+ ]
+}

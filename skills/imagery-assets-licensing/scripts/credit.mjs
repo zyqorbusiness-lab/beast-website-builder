@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// credit.mjs: write and check asset credit files. This is the repo's credit gate
+// credit.mjs: write and check asset credit files (the same keys and licence allow-list as the repo gate tools/credits-check.mjs).
 //   node credit.mjs new <asset> --title T --author A --author-url U --source URL --licence "CC0 1.0" [--licence-url U] [--changes C] [--attribution A] [--verified]
 //   node credit.mjs check <dir>        validate every asset under <dir>; exit 1 on a missing or invalid credit
 // MIT, Zyqor Studio.

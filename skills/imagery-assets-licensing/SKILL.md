@@ -100,7 +100,7 @@ from other agencies' sites, AI generators.
 
 ## 4. Credit files and the credits page
 
-The repo's gate (`scripts/credit.mjs check`) requires `<asset>.credit.json` next to every asset (or one `credit.json`
+The repo's gate (`tools/credits-check.mjs`) requires `<asset>.credit.json` next to every asset (or one `credit.json`
 for a folder holding one asset), with these keys, all non-empty:
 
 ```json
@@ -236,7 +236,7 @@ rig and save stills (the components' `scroll-3d-stage/poster.webp` is a CC0 mode
 
 ## 13. Pre-ship checklist
 
-- [ ] `node scripts/credit.mjs check <site-dir>` passes.
+- [ ] `node scripts/credit.mjs check site/` (or `node tools/credits-check.mjs`) passes.
 - [ ] Every CC BY asset credited visibly on the page that uses it.
 - [ ] Logos, labels, trademarks removed; no recognisable people without release.
 - [ ] No AI images, no "AI" in copy, alt text or credits.
@@ -281,4 +281,4 @@ rig and save stills (the components' `scroll-3d-stage/poster.webp` is a CC0 mode
 - Drive points T8, I11, H2, H4, H8, H9, H10, H13 (`docs/beast/SKILLS_SOURCE_MAP.md`).
 - scroll-world by cyw (MIT), https://github.com/oso95/scroll-world: `knockout.py` border-connected flood fill (T23), approach re-implemented.
 - Licences read: Unsplash License (unsplash.com/license), Pexels License (pexels.com/license), Creative Commons licence deeds (CC0 1.0, CC BY 4.0, CC BY-SA 4.0), Mixkit licence (mixkit.co/license), Poly Haven licence (CC0), Phosphor and Tabler (MIT), SIL OFL 1.1, Smithsonian Open Access terms, NASA media usage guidelines.
-- Repo tool: `scripts/credit.mjs` (the credit gate).
+- Repo tool: `tools/credits-check.mjs` (the credit gate).

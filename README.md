@@ -66,7 +66,13 @@ CLI directly does not. Details in [guidance/VENDORED.json](guidance/VENDORED.jso
   study, and [INTEGRATION.md](docs/INTEGRATION.md): which guidance guides to
   query at each step of each design skill.
 - **[tools/](tools/)** - `validate.mjs` (repo self-check), `guidance.mjs`
-  (telemetry-opted-out CLI wrapper), `update-guidance.mjs` (upstream refresh).
+  (telemetry-opted-out CLI wrapper), `update-guidance.mjs` (upstream refresh),
+  plus the original toolkit: `credits-check.mjs` (credit gate over every
+  asset), `credits-build.mjs`, `check-links.mjs`, `join-parts.mjs` +
+  `parts.json` (reassemble split `.glb` parts; the library `site/` entries
+  stay in the source repo, only the vendored flight-helmet is indexed here),
+  `library-build.mjs`, `qa-library.mjs`, `new-concept.mjs` (library
+  maintainers' tooling, operate on a `site/` tree) and `video-flow/`.
 - **[tests/](tests/)** - dependency-free `node:test` smoke tests. CI is live
   on this repo: [.github/workflows/ci.yml](.github/workflows/ci.yml) runs
   `validate.mjs`, the smoke tests and a guidance legacy-scan on every push
