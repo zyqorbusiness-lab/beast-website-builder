@@ -2,9 +2,9 @@
 
 # 3D REPO — best points (oso95/scroll-world)
 
-For the BEAST REPO (best-website-designer). Written 2026-10-28 (IST morning) by the repo3d helper of coordinator 2fc59ab0.
-Sources read in full: the fresh clone in `work/beast/repo3d/scroll-world/` (every file), Sujon's messages
-(`work/beast/sujon_messages_all.txt`), his rules (`memory/zyqor.md`, `memory/zyqor_skills.md`), portfolio v3
+For the BEAST REPO (best-website-designer). Written 2026-10-28 (IST morning).
+Sources read in full: a fresh clone of the scroll-world repo (every file), Sujon's messages,
+his standing rules, portfolio v3
 (`site/scrub-engine.js`, `site/config-desktop.js`, `site/m/config-mobile.js`, `site/index.html`, `site/lab/_kit/videoflow.js`,
 `tools/video-flow/README.md`, `work/VIDEOFLOW_NOTES.md`), the bakery README (`zyqor_sites/bakery_scrollworld/README.txt`),
 portfolio v2 notes, and the live GitHub repo (main = ec148e9).
@@ -23,13 +23,13 @@ Citations are `file Lnn` against the clone at commit 71cc36d. `SKILL` = `skills/
   downloadable skills, **as long as the copyright line and MIT text travel with every copy or substantial portion**.
 - **Problem found:** portfolio v3 already ships a modified copy of the engine (`site/scrub-engine.js`, live on GitHub main ec148e9)
   **without the MIT notice anywhere** (not in the file, CREDITS.md, LICENSE.md or README; README even says "custom scrub engine").
-  Ready-to-apply fix: `work/beast/repo3d/LICENCE_FIX.md` (not applied, not pushed).
+  Ready-to-apply fix: held in the working notes (not applied, not pushed).
 - **Biggest conflict:** its whole asset step is AI renders. Sujon wants real assets. Keep the engine, the encode and phone rules,
   the seam laws and the QA; swap the AI generation for **our own deterministic renders of CC0/CC-BY 3D scenes** or **real stock
   footage**. With our own renders the seam problem goes away (one camera path, cut at exact frames).
 - **Correction to the brief:** scroll-world does *not* use image frame sequences. It scrubs MP4 video loaded as a Blob.
   Frame sequences on a canvas are portfolio v3's own `tools/video-flow` + `_kit/videoflow.js`.
-- **Other 3D repos in Sujon's messages:** none. scroll-world (Oct 27, 6:16 AM, [m:036d5566]) is the only repo/3D link he sent in
+- **Other 3D repos in Sujon's messages:** none. scroll-world (Oct 27, 6:16 AM, ) is the only repo/3D link he sent in
   this chat. Details and the near-misses in §3.
 
 ---
@@ -40,7 +40,7 @@ Citations are `file Lnn` against the clone at commit 71cc36d. `SKILL` = `skills/
 |---|---|
 | URL | https://github.com/oso95/scroll-world (one branch, `main`; no tags) |
 | Commit | 71cc36d, 2026-07-28 "docs: seam QA calibration — judge composition, not raw PSNR" |
-| Local copy | `/home/user/tab/files/zyqor_skills/scroll-world/` is the same commit; `diff -rq` against the fresh clone: no differences |
+| Local copy | A local copy at the same commit was diffed against the fresh clone: no differences |
 | Author | "cyw" (cyw@cywang.me), plugin version 0.8.0 (`.claude-plugin/plugin.json`) |
 | Popularity (GitHub API, read today) | 10,589 stars, 1,168 forks, last push 2026-07-29 |
 | Size | 9 files, 120 KB. SKILL.md 49.5 KB, scrub-engine.js 28.7 KB, pipeline.md 16.2 KB, prompts.md 10.0 KB, README 6.9 KB, knockout.py 2.9 KB, index-template.html 2.7 KB, two plugin JSONs, LICENSE |
@@ -76,24 +76,24 @@ author's name as an endorsement. Ideas and techniques are free anyway; only copi
 v3 changes (diff vs the original: 283 added/removed lines, 231 non-empty added; same header "scroll-world - portable scroll-scrubbed camera-flight engine", same functions,
 same CSS). The file has 0 occurrences of licence/copyright/cyw/oso95; CREDITS.md only says "Intro scroll-world clips ... all rights
 reserved"; README L30 says "custom scrub engine". Also the deploy build is minified (bakery README: terser), which strips normal
-comments, so the notice must be a `/*! ... */` comment. Fix text: `work/beast/repo3d/LICENCE_FIX.md`. Do this in the first beast-repo commit.
+comments, so the notice must be a `/*! ... */` comment. Do this in the first beast-repo commit.
 
 ---
 
 ## 3. Other 3D repos / links Sujon gave — checked
 
-Searched all 600+ of his messages in `sujon_messages_all.txt` (every URL, plus the words 3d, three, sketchfab, codepen, spline, repo,
-github, skill, model, blender) and grepped all session transcripts for github/codepen/sketchfab/spline/codesandbox URLs.
+Searched all 600+ of his messages (every URL, plus the words 3d, three, sketchfab, codepen, spline, repo,
+github, skill, model, blender) for github/codepen/sketchfab/spline/codesandbox URLs.
 
-| Date (IST) | Ref | What | 3D repo? |
-|---|---|---|---|
-| Oct 27 06:16 | [m:036d5566] | "Install this skills https://github.com/oso95/scroll-world.git" | **Yes, the only one** |
-| Oct 27 06:25-06:30 | [m:8983c8a1], [m:1b134106], [m:1a6e33e2], [m:0f94294d] | "3D scroll wala effect mast"; "$1k aur $10k plans ke liye hi best rahega"; permanent rule to use the skill on every website | about scroll-world |
-| Oct 27 15:32 | [m:9e9535a1] | instagram.com/ayzz.thedesigner | design reference (the "ayzz patterns"), not a repo |
-| Oct 27 18:09 | [m:b282a2af] | drive.google.com/file/d/1OTIowxn… "Aha se vi best best sahi sahi points repo me katdo" | his premium-design Drive file (Drive helper's item) |
-| Oct 25 16:53 | [m:f84c21fd] | lottiefiles.com free emoji animations | reel editing, not 3D |
+| Date (IST) | What | 3D repo? |
+|---|---|---|
+| Oct 27 06:16 | "Install this skills https://github.com/oso95/scroll-world.git" | **Yes, the only one** |
+| Oct 27 06:25-06:30 | "3D scroll wala effect mast"; "$1k aur $10k plans ke liye hi best rahega"; permanent rule to use the skill on every website | about scroll-world |
+| Oct 27 15:32 | instagram.com/ayzz.thedesigner | design reference (the "ayzz patterns"), not a repo |
+| Oct 27 18:09 | his premium-design Drive file: "Aha se vi best best sahi sahi points repo me katdo" | the source of DRIVE_POINTS.md |
+| Oct 25 16:53 | lottiefiles.com free emoji animations | reel editing, not 3D |
 
-Not from his messages but worth knowing: other GitHub links in the transcripts come from (a) assets Tab used (KhronosGroup
+Not from his messages but worth knowing: other GitHub links come from (a) assets used in the builds (KhronosGroup
 glTF-Sample-Assets, usd-wg CarbonFrameBike, meshoptimizer, lenis, fonts) or (b) his Drive's `DESIGN-LIBRARY-INDEX.md` L73-85
 (howseen-ai/claude-motion-design, udaysharmadev/Gravitas, nextlevelbuilder/ui-ux-pro-max-skill, Ashutoshx7/VengenceUI, shadcn-ui,
 youtube-agent-skill, browser-use/video-use) and its L67 game-asset links (cgtrader grass, sketchfab grass-02, pixabay 3D). None is a
@@ -103,18 +103,18 @@ youtube-agent-skill, browser-use/video-use) and its L67 game-asset links (cgtrad
 
 ## 4. Sujon's rules that decide how we use it
 
-1. **Permanent: every website uses the scroll-world skill** (Oct 27 06:28, [m:1a6e33e2]: "jab vi website bana na ha o skills use kagma
+1. **Permanent: every website uses the scroll-world skill** (Oct 27 06:28, : "jab vi website bana na ha o skills use kagma
    ha and har time use karna ha bilkul mat [bhool]"). For 300 concepts this can't mean 300 AI video chains; it means every concept
    uses the scroll-world *method*: scroll-driven camera/time, the engine or its loading/phone rules, seam QA. §8 maps it per tier.
-2. **Separate heavy desktop + light phone builds** (Oct 27 06:29, memory) — **but** Oct 27 20:23 [m:59766d2a]: "mobile ke liya vi utna hi
+2. **Separate heavy desktop + light phone builds** (Oct 27 06:29) — **but** Oct 27 20:23 : "mobile ke liya vi utna hi
    primium and wasa hi quality chaiye ... sirf asa compress kago ki quality me koi difference na aye". Newer rule wins: keep two builds
    (separate pages, as v3 does), but the phone gets the same scene at quality that looks identical — native 9:16, not a 540x960 crf-31 squeeze.
-3. **Real assets, not AI:** "koi emojis nahi real hona chahiye sab" (Oct 27 09:13, [m:1f2c5deb]); "video flow se bana lega real assets
-   use karega har time" (Oct 27 18:06, [m:4542f872]); "primium high quality savi real assist hi use kato koi fake emojis" (Oct 27 19:00,
-   [m:18a0d1a9]); "Quality ai feel design ... improvement" (Oct 27 18:22, [m:bfe1f4ca]); Drive: "real footage, no AI feel".
-4. **Auto play + Skip buttons** on scroll-world pages (Oct 27 09:12, [m:7632f475]) — v3 built this into the engine.
-5. One premium 3-colour palette per site, no black, no purple / AI-gradient colours, premium fonts (Oct 27 12:15, [m:e6ab4818]).
-6. Lazy-load reveal effects on every site (Oct 27 06:29, memory). Preview before anything goes live.
+3. **Real assets, not AI:** "koi emojis nahi real hona chahiye sab" (Oct 27 09:13, ); "video flow se bana lega real assets
+   use karega har time" (Oct 27 18:06, ); "primium high quality savi real assist hi use kato koi fake emojis" (Oct 27 19:00,
+   ); "Quality ai feel design ... improvement" (Oct 27 18:22, ); Drive: "real footage, no AI feel".
+4. **Auto play + Skip buttons** on scroll-world pages (Oct 27 09:12, ) — v3 built this into the engine.
+5. One premium 3-colour palette per site, no black, no purple / AI-gradient colours, premium fonts (Oct 27 12:15, ).
+6. Lazy-load reveal effects on every site (Oct 27 06:29). Preview before anything goes live.
 7. Drive: "Portfolio sites: no endless/infinity loop animations" (`drive/DESIGN-LIBRARY-INDEX.md` L22) — see §6 (particles).
 
 ---
@@ -333,7 +333,7 @@ Each: `SKILL.md` + `README.md`, working example, install/use steps, LICENSE (MIT
 
 ---
 
-## 10. Things for the coordinator to decide or pass up
+## 10. Open decisions for the repo owner
 
 1. Apply the licence fix (`LICENCE_FIX.md`) in the first beast commit — it's a live MIT compliance gap in the public repo.
 2. v3 home intro clips are AI renders (Kling + gpt-image), made before the "real assets" rule; ask Sujon whether to re-render with own CC0 scenes.

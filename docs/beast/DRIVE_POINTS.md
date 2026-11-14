@@ -2,7 +2,7 @@
 
 # DRIVE_BEST_POINTS.md: the best points from Sujon's premium-design Drive
 
-BEAST REPO Phase 0, Drive helper (task aa503a78), written 28 Oct 2026 for the beast coordinator (2fc59ab0). Read-only on his Drive: nothing was modified, moved or shared.
+Distilled from the owner's premium-design Drive on 28 Oct 2026. Read-only source: nothing was modified, moved or shared.
 
 ## How to read this
 
@@ -26,7 +26,7 @@ BEAST REPO Phase 0, Drive helper (task aa503a78), written 28 Oct 2026 for the be
 
 **Status tags.** `ADOPT` = use as written. `ADAPT` = use, changed as stated so it fits his rules. `CONFLICT` = clashes with one of his permanent rules: listed, **not adopted**. `SUPERSEDED` = an older Drive default that a later instruction of his replaced.
 
-**His permanent rules this was checked against** (from memory/zyqor.md, zyqor_skills.md and work/audit/REQUIREMENTS.md):
+**His permanent rules this was checked against** (his standing rules file and the requirements checklist):
 - **R-colour** (27 Oct 12:15 IST): "Premium colour, no black and purple, ye sab AI-feel colour hai. Premium fonts. Ek website par 3 colour sabse best lagta hai."
 - **R-real**: real premium assets only (CC0/CC-BY, credited), no AI renders, no code-made look (27 Oct 6:22 PM); no emojis, "real hona chahiye sab" (27 Oct 9:13 AM).
 - **R-honest**: no fake clients, reviews, metrics; fictional brands labelled Concept.
@@ -361,16 +361,16 @@ BEAST REPO Phase 0, Drive helper (task aa503a78), written 28 Oct 2026 for the be
 ## 10. Process and QA checklists
 
 **Q1. Write the brief before any code.** BEAST §5: "Chosen style + list se kahan alag hue; colour roles (primary, secondary, accent, background, surface, text, muted, error, success) hex ke saath; free font pair, 2-3 weights, type scale; 8-point spacing; grid; 3 signature details jo hand-made feel dein; components; states". MA: "First output the 5-Line Design Token Summary". WBG: "First give me a short brief: style, palette with hex codes, font pair, spacing, signature details."
-*Cite:* MA Part F item 13 §5; MA Part E §0 rule 3; WBG §6 "ORDER OF WORK a". *Beast:* every concept helper writes this BRIEF block at the top of NOTES.md before coding; the JSON row already holds palette, fonts, structure and technique; reviewers check the "3 signature details" exist on screen. *Status:* ADOPT.
+*Cite:* MA Part F item 13 §5; MA Part E §0 rule 3; WBG §6 "ORDER OF WORK a". *Beast:* every concept build writes this BRIEF block at the top of NOTES.md before coding; the JSON row already holds palette, fonts, structure and technique; reviewers check the "3 signature details" exist on screen. *Status:* ADOPT.
 
 **Q2. Name the style.** "'Beautiful/modern' jaise vague words nahi; style ka naam lo: Flat, Minimalism, Glassmorphism/Liquid Glass, Claymorphism, Neumorphism, Skeuomorphism, Neo-Brutalism, Maximalism, Bento Grid, Spatial UI, Material 3, Dark mode." Per-project named styles, "not one style everywhere".
 *Cite:* MA Part F item 13 §1; IDX §2 ("Per-project styles"). *Beast:* `style` field in `concepts_300.json` and a filter on `/library/`; the 300 should spread across these styles rather than repeat one look. *Status:* ADOPT.
 
 **Q3. Analyse each reference before building.** For each: style and why; palette with approximate hex; typography; layout (grid, order, density, whitespace); shape (radius, border, shadow, icons); components; motion ("still image se motion prove nahi hota, jo likho use 'inference' label karo"); what to copy (structure, rhythm, hierarchy) and what not (logo, brand, illustration, text, photos).
-*Cite:* MA Part F item 13 §2. *Beast:* the ayzz-pattern research notes follow this shape; concept helpers fill it for any reference they use. *Status:* ADOPT.
+*Cite:* MA Part F item 13 §2. *Beast:* the ayzz-pattern research notes follow this shape; concept builds fill it for any reference they use. *Status:* ADOPT.
 
 **Q4. Build a section at a time, judge the render.** "Build one section at a time… Ask for a single page first, not a whole site." "Show the render, not the code. Judge by screenshots at 360, 768 and 1440 px, then on a real phone."
-*Cite:* MA Part A steps 3 and 6; WBG §1 step 6. *Beast:* the helper loop (build → screenshot → critique → improve) and the 60-minute iteration rule. *Status:* ADOPT.
+*Cite:* MA Part A steps 3 and 6; WBG §1 step 6. *Beast:* the build loop (build → screenshot → critique → improve) and the 60-minute iteration rule. *Status:* ADOPT.
 
 **Q5. Pass/fail table; never ship a FAIL.** Rows: layout 360/768/1440, real phone, links and buttons, forms, contrast, keyboard, images/alt, reduced motion, performance (Lighthouse), 3D fallback, console, SEO basics, trust, avoid list.
 *Cite:* WBG §7; MA Part B. *Beast:* `qa-harness` automates the machine-checkable rows; `checklist.md` in each skill and the tier checklists keep the rest; the report lists every row as PASS/FAIL. *Status:* ADOPT.
@@ -379,7 +379,7 @@ BEAST REPO Phase 0, Drive helper (task aa503a78), written 28 Oct 2026 for the be
 *Cite:* MMG §26; GEM rule 8. *Beast:* fits his ≥60-minute rule: each iteration in NOTES.md names the weakest thing found and what changed. *Status:* ADOPT.
 
 **Q7. Report evidence, not intent.** "Report what actually happened, not what you intended." Invariants: completion needs evidence observed after the last change; "Never exact-retry a failure"; "Say what you can't verify." Every verification ends "VERDICT: PASS" or "VERDICT: FAIL -- [reason]". His 15 Oct directive: read this file before any coding.
-*Cite:* GRV ("One rule above all", "THE 6 INVARIANTS" 3, 4, 6, "VERIFICATION HIERARCHY"); IDX §3 and §5. *Beast:* `qa-harness` reports end with a VERDICT line; helper reports list unverified items (real phone, real-device fps). Gravitas is MIT; the `skills/` README can link it as recommended discipline. *Status:* ADOPT.
+*Cite:* GRV ("One rule above all", "THE 6 INVARIANTS" 3, 4, 6, "VERIFICATION HIERARCHY"); IDX §3 and §5. *Beast:* `qa-harness` reports end with a VERDICT line; review reports list unverified items (real phone, real-device fps). Gravitas is MIT; the `skills/` README can link it as recommended discipline. *Status:* ADOPT.
 
 **Q8. PRISMX build order.** P = Purpose, R = Requirements, I = Interaction, S = System, M = "Make it premium", X = eXecution; "Establish a coherent design system before building individual pages"; "Do not overuse gradients, glassmorphism, animations, cards, or decorative elements"; "Do not leave placeholder logic, fake security, broken buttons, or unfinished flows."
 *Cite:* PRX. *Beast:* the section order of every SKILL.md (purpose, requirements, interaction, system, premium checks, execution/QA); the kit (design system) is built before concepts. *Status:* ADOPT.
@@ -407,7 +407,7 @@ The Drive does not contain Awwwards' own judging criteria. What it defines is it
 *Cite:* MA Part E §13. *Beast:* `award-site-checklist` keeps gates 2 (display + sans + mono with clamp), 3 (one of the 14 structures), 4 (magnetic CTA, pointer-fine), 5 (working spring toggles), 7 (a draggable/sandbox interaction), 12 (grain + specular borders), 13 (concrete copy, no lorem ipsum), 14 (stacking below 768px, no custom cursor on touch) and 15 (no TODOs, complete code). Changed: gate 1 becomes "palette passes R-colour (3 colours, no black, no purple)"; gate 10 becomes "pinned self-hosted libraries, no broken images". Not adopted as mandatory: gate 6 (theme switcher), 8 (bento spotlights), 9 (procedural sculpture / liquid shader stage), 11 (⌘K + toasts on every site). *Status:* ADAPT.
 
 **W2. The bar is selection, execution and checking, not tools.** "Honest verdict: toolkit kaafi strong hai. Kami tools ki nahi, sahi selection, execution aur checking ki hai." "Quality comes from real assets, testing on real devices, and rejecting weak outputs."
-*Cite:* MA Part G §8; MA header ("Honest scope"). *Beast:* the coordinator's review gate rejects templated-looking concepts even if they pass QA. *Status:* ADOPT.
+*Cite:* MA Part G §8; MA header ("Honest scope"). *Beast:* the review gate rejects templated-looking concepts even if they pass QA. *Status:* ADOPT.
 
 **W3. The human-designed test.** "The result must NOT feel like: 'AI generated a bunch of cool effects.' It should feel like: 'A designer intentionally chose every movement.' Prioritize: taste, clarity, story, timing, composition, restraint, originality, craft over: effect count, technical complexity, visual noise."
 *Cite:* MMG §29. *Beast:* the eight scoring dimensions of `award-site-checklist` (each 1-5, a concept ships at 4+ average with no 1s). *Status:* ADOPT.
@@ -446,7 +446,7 @@ The Drive does not contain Awwwards' own judging criteria. What it defines is it
 | X17 | Ambient radial glow "blur(140px) radial glow (opacity: 0.12)" behind the hero (MA Part E §2 Step 5) | Avoid list "radial orbs"; BOLO "radial orbs used decoratively" | Not as a decorative orb. Light behind a 3D object comes from the scene's own lighting (D3). |
 | X18 | Metallic gradient text fill #FFFFFF → #71717A, rotating conic border beam, "zero-trust cipher matrix", "self-typing terminal" (MA Part E Structure 01) | Avoid list "terminal window", "harsh gradients"; BOLO "meaningless HUD elements" | Not used. |
 | X19 | Tailwind Play CDN and three.js r128 in the "verified" head (MA Part E §9) | MA Part C itself: Play CDN is development-only, r128 is old | Pinned, self-hosted, current libraries (P7). |
-| X20 | Separate heavy desktop / light mobile builds (his 27 Oct 6:29 AM rule, recorded in zyqor_skills.md; not a Drive item) | His later 27 Oct 8:23 PM rule (same quality on phone) and CHK "Mobile ko desktop ka chhota version mat banao" | One page per concept with the same assets compressed, phone-specific layout (BUILD_PLAN already does this). Listed here because the Drive checklist sides with the later rule. |
+| X20 | Separate heavy desktop / light mobile builds (his 27 Oct 6:29 AM rule; not a Drive item) | His later 27 Oct 8:23 PM rule (same quality on phone) and CHK "Mobile ko desktop ka chhota version mat banao" | One page per concept with the same assets compressed, phone-specific layout (BUILD_PLAN already does this). Listed here because the Drive checklist sides with the later rule. |
 
 Not conflicts, but scoped out on purpose: the video-editing material (SKL, MA Part F items 5, 6, 7, 11, 12) and the BoloFlow Android specifics (MA Part F items 8, 9). Only their transferable principles are used above (MMG for motion, compositing, lighting and QA; BOLO for motion rules).
 
@@ -498,7 +498,7 @@ Ranked by how much they will change the quality of the 300 concepts and the skil
 
 **In one paragraph.** His connected Google Drive (zyqorbusiness@gmail.com) holds a "ZYQOR Design Library" built for him before he joined this Tab (16-22 Oct 2026). It contains three long design guides that all centre on his "Master Award-Winning Web Design System & Anti-AI-Slop Architecture v2.0" (a 922-line prompt, MA Part G §1). The newest and most usable is `Website-Building-Guide-New-Site.md`, which reorganises that system into steps and adds licence checks and a conflict rule. Around them sit his own short rule documents (design checklist, PRISMX, BoloFlow motion system, 30-item avoid list), a library index, and several video-editing prompts. Roughly half of the text is genuinely about premium web design; most of the rest is video or Android-app material. The Master Award core is strong on layout, type, tokens and interaction physics, but it defaults to a near-black, neon-accent, bento, fake-metrics "Awwwards SaaS" look that his later rules reject. That is why many of its points are marked ADAPT or CONFLICT above.
 
-**Which "Drive" he meant.** On 28 Oct he wrote "mene jojo bola ha kaisa primium deisgn ka ak drive diya tha". The only Drive link he sent in this WhatsApp chat for repo points is from 27 Oct 6:09 PM ([m:b282a2af], `drive.google.com/file/d/1OTIowxn4T3OezSLEkP6zL_t5CsTbP0xz`, "Aha se vi best best sahi sahi points repo me katdo"). That file is `ZYQOR-Portfolio-Details-27Oct2026.pdf`, a status report on his live portfolio, not a design guide; its points were already applied to v3 (PTS). The premium-design material is the Master Award / Website-Building-Guide set in the same Drive, which he never linked in this chat (no message mentions "Master" or those file ids). This document covers both, so whichever one he meant is covered. If he names another file, it can be added.
+**Which "Drive" he meant.** On 28 Oct he wrote "mene jojo bola ha kaisa primium deisgn ka ak drive diya tha". The only Drive link he sent in this WhatsApp chat for repo points is from 27 Oct 6:09 PM (a Drive file link, "Aha se vi best best sahi sahi points repo me katdo"). That file is `ZYQOR-Portfolio-Details-27Oct2026.pdf`, a status report on his live portfolio, not a design guide; its points were already applied to v3 (PTS). The premium-design material is the Master Award / Website-Building-Guide set in the same Drive, which he never linked in this chat (no message mentions "Master" or those file ids). This document covers both, so whichever one he meant is covered. If he names another file, it can be added.
 
 | File | Drive dates (UTC) | Size | What it is | Really about premium design? |
 |---|---|---|---|---|
@@ -521,7 +521,7 @@ Ranked by how much they will change the quality of the 300 concepts and the skil
 
 ## 16. Further files
 
-**Fetched today (read-only) and used above:** `gravitas-coding-rules.txt` (1dwqJ3kFHUAndPleXtWY1FqjFYu9ywDOp), `gemini-instruction-DRAFT-stack-freedom.txt` (11_2xyLDNa7rD6raSdccjKNeF297WKRWr), `site-polish-BACKLOG.md` (1-pnw6Ekos4Gsfx00mafe_jXOabKpPDpX). Saved as `work/beast/drive/extra_*`.
+**Fetched read-only and used above:** `gravitas-coding-rules.txt`, `gemini-instruction-DRAFT-stack-freedom.txt`, `site-polish-BACKLOG.md` (owner's Drive).
 
 **Not worth fetching for design:** `master-motion-graphics-video-creator.txt`, `launch-video-production-agent.txt` and `boloflow-native-android-rebuild.txt` in the Drive `prompts/` folder are already verbatim in MA Part F (items 11, 7, 8). The Gemini/GodMode video-editor PDFs and "2026 Elite AI Video Editing Agent" doc are video. `Numivra-Math-website-detailed-prompt.md` is project-specific (and Numivra is "keep the current design").
 
@@ -533,7 +533,7 @@ Ranked by how much they will change the quality of the 300 concepts and the skil
 ---
 ## 17. Re-read Oct 30 (big-review worker): what was added
 
-I re-read every file in `work/beast/drive/` (18 files, 712 KB) against sections 1-16.
+Every fetched Drive file (18 files, 712 KB) was re-read against sections 1-16.
 
 - **`new_doc.txt` = the Google Doc he linked on Oct 28 09:52 IST** (`1GR1TEWm…`, "Isla baat kar raha ha kha"). It is the Website-Building Guide v6 as a Doc (97% the same text as `Website-Building-Guide-New-Site.md`, WBG). Nothing in it is missing from WBG, so no new design rule comes from it. `Website-Building-Guide-New-Site_sent_Oct28.docx` is Tab's own export of WBG, sent to him on Oct 28.
 - **Nothing was missed on layout, type, colour, motion or 3D.** The one gap was use: the Drive's **component anatomy** (MA Part E §6 and §8, WBG §4) was written as rules but never shipped as reusable parts. It is now the spec for `site/components/` (Oct 30). The mapping:

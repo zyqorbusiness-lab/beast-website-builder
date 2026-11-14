@@ -1,6 +1,6 @@
 # MASTER_ASKS.md: everything Sujon asked for, checked
 
-Updated Oct 30 2026, 03:41 UTC by the big-review worker. Built from `work/beast/CHAT_ANALYSIS.md` (all 697 of his messages, Oct 25 to Oct 30), `VOICE_NOTES.md` (9 voice notes) and `DRIVE_BEST_POINTS.md`. One row per ask; repeated asks are merged into the first. Process rules (one agent, fast replies, quality first) and non-repo errands (calls, reels, Instagram) are in CHAT_ANALYSIS sections 8-13 and are not counted here.
+Updated Oct 30 2026, 03:41 UTC. Built from a full analysis of his messages (697 messages, Oct 25 to Oct 30), 9 re-transcribed voice notes and the Drive best-points notes. One row per ask; repeated asks are merged into the first. Process rules (fast replies, quality first) and non-repo errands (calls, reels, Instagram) are not counted here.
 
 **Counts: 53 done, 11 partial, 0 missing (64 asks).**
 
@@ -43,7 +43,7 @@ Updated Oct 30 2026, 03:41 UTC by the big-review worker. Built from `work/beast/
 
 | | Ask | When / ref | Status | Evidence |
 |---|---|---|---|---|
-| [x] M1 | Better assets and models, about 1 hour each | Oct 27 | **DONE** | Two upgrade rounds, 14/14 items, 60-97 min per helper. |
+| [x] M1 | Better assets and models, about 1 hour each | Oct 27 | **DONE** | Two upgrade rounds, 14/14 items, 60-97 min per model round. |
 | [x] M3 | Real premium assets; code-made only when better; no fake emojis | Oct 27 | **DONE** | Lab demos use real CC0/CC-BY models since Oct 28; library concepts use real models + credit files; components use a real CC0 scan. |
 | [x] M4 | More detail on the models | Oct 28 | **DONE** | Normal/roughness/AO maps, HDRI, contact shadows, ACES. |
 | [~] M5 | Many concepts, not one design repeated | Oct 27 | **PARTIAL** | 36 distinct concepts (18 Lab + 18 library) with pattern letters so pairs do not repeat; 282 library concepts to go. |

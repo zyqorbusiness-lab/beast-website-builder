@@ -1,7 +1,7 @@
 /* scroll-video.js: Zyqor Studio (MIT). A scroll-scrubbed video hero in one small file, no dependencies.
    The idea (a camera flight you drive with the scroll wheel) comes from scroll-world by cyw
    (https://github.com/oso95/scroll-world, MIT); this is a minimal rewrite for a single hero clip.
-   The full multi-scene engine used on the Zyqor portfolio is site/scrub-engine.js in this repo.
+   The full multi-scene engine used on the Zyqor portfolio is site/scrub-engine.js in the source repo (best-website-designer), not vendored here.
 
    <section class="sv" data-scroll-video
             data-src-desktop="clip-d.mp4" data-src-phone="clip-m.mp4"
