@@ -1,8 +1,13 @@
 # Integration map: design skill ↔ modern-web guide
 
 Which vendored Modern Web Guidance guides to consult while working through
-each design skill. The guidance corpus (209 guides) is organised into these
-categories under `guidance/skills/modern-web-guidance/guides/`:
+each design skill. The corpus is organised into these categories under
+`guidance/skills/modern-web-guidance/guides/`. Counting precisely (reconciled
+against upstream's index and release notes): 209 raw guide files, 208 unique
+guides (built-in-ai/language-model.md is a byte-identical alias of
+prompt-api.md), of which 203 are use-case guides - the other 5 are category
+overview entries (accessibility, forms, html, performance, security). The
+guides index 250 web platform features. Per-category file counts:
 
 | Category | Guides | Use it when the build touches |
 |---|---|---|

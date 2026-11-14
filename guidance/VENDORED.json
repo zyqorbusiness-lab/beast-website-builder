@@ -9,5 +9,12 @@
   "licence": "Apache-2.0",
   "stewards": "Google Chrome, Microsoft Edge, Mozilla Firefox and MDN teams (per upstream README)",
   "telemetry_note": "The CLI collects anonymous usage data unless DISABLE_TELEMETRY=1. This repo's wrapper (tools/guidance.mjs, `npm run guidance`) sets DISABLE_TELEMETRY=1 by default.",
-  "update": "Run `npm run update-guidance` to re-vendor the latest npm release and rewrite this file."
+  "update": "Run `npm run update-guidance` to re-vendor the latest npm release and rewrite this file.",
+  "guide_counts": {
+    "raw_guide_files": 209,
+    "unique_guides": 208,
+    "use_case_guides": 203,
+    "indexed_features": 250,
+    "note": "built-in-ai/language-model.md is a byte-identical alias of prompt-api.md; the 5 category overview entries (accessibility, forms, html, performance, security) are not use-case guides. Reconciled 2026-11-14 against the upstream index and release notes."
+  }
 }

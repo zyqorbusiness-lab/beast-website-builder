@@ -2,7 +2,7 @@
 
 One free toolkit for designing and building premium websites with an AI coding
 agent: **37 design skills** that teach the craft, **14 production UI
-components** you can drop in, **209 modern-web-platform guides with a search
+components** you can drop in, **203 modern-web use-case guides with a search
 CLI** that keep the code current, and a **workflow** that ties them together
 with an evidence gate before anything ships.
 
@@ -11,7 +11,7 @@ It combines two repos that were never competitors:
 | Layer | From | What it gives you |
 |---|---|---|
 | Design brain | [best-website-designer](https://github.com/zyqorbusiness-lab/best-website-designer) (Zyqor Studio, MIT) | How to make a site look and feel hand-made and premium: idea, colour, type, layout, motion, 3D, phone parity, copy, QA. |
-| Technical guardrail | [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance) (Google Chrome + Edge + Firefox + MDN stewards, Apache-2.0) | What the platform can do today: search 209 expert guides and scan code for legacy patterns before you write UI. |
+| Technical guardrail | [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance) (Google Chrome + Edge + Firefox + MDN stewards, Apache-2.0) | What the platform can do today: search 203 use-case guides (250 indexed platform features) and scan code for legacy patterns before you write UI. |
 | Build loop | this repo (+ [Gravitas](https://github.com/udaysharmadev/Gravitas) invariants, credited) | How to run the two together: brief → design → guidance-checked build → measured QA → evidence-based ship. See [WORKFLOW.md](WORKFLOW.md). |
 
 No paid dependencies. Static files, Node >= 22 scripts, self-hosted assets.
@@ -57,7 +57,7 @@ CLI directly does not. Details in [guidance/VENDORED.json](guidance/VENDORED.jso
   fonts, vendor three.js, HDRI and demo assets live in `components/_shared/`.
 - **[guidance/](guidance/)** - Modern Web Guidance vendored from npm v1.0.0
   (content build 2026_11_09-5bcc021b): the `search` / `retrieve` /
-  `legacy-scan` CLI and all 209 guides across CSS, forms, performance,
+  `legacy-scan` CLI and 203 use-case guides across CSS, forms, performance,
   accessibility, UI components, security and more. Update with
   `npm run update-guidance`.
 - **[docs/](docs/)** - design rules, the QA checklist, the skills source map,
