@@ -37,7 +37,7 @@ Project: ________  Page(s): ________  Commit: ________  Checked by: ________  Da
 - [ ] Text contrast ≥ 4.5 : 1 (body) and ≥ 3 : 1 (large text, icons, focus rings).
 
 ## 6. Credits and honesty
-- [ ] `node tools/credits-check.mjs` prints `"fail": 0`. Every asset has a credit file. [asset-sources-and-licence-check]
+- [ ] Credit gate passes: `node tools/credits-check.mjs --allow-flagged` prints `"fail": 0` (the gate also runs as CI validate check 9). Skill-level equivalent: `node skills/imagery-assets-licensing/scripts/credit.mjs check <dir>`. Every asset has a credit file. [asset-sources-and-licence-check]
 - [ ] Every CC BY asset shows author + licence as visible text on the page that uses it.
 - [ ] No AI-generated images. No fake reviews, testimonials, client logos, ratings or "trusted by" lines.
 - [ ] Concepts are labelled as concepts; forms say nothing is sent.

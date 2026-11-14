@@ -22,7 +22,7 @@ does the idea need 3D? (section 1) -> source a real model + licence (2) -> optim
 `examples/index.html` is a working stage built on these rules: a CC0 photogrammetry vase (Poly Haven), a CC0 studio
 HDRI, ACES tone mapping, key + rim lights, a soft contact shadow, three scroll-driven camera beats, a finish studio
 with real buttons, real loading progress, pause off-screen and when the tab is hidden, and a poster when WebGL is
-unavailable. It runs inside this repo (it loads three.js r170 from `site/vendor/three/`).
+unavailable. It runs inside this repo (the example's import map loads three.js r170 from `examples/assets/three/`).
 
 ---
 

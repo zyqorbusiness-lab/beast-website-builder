@@ -46,7 +46,7 @@ if (build !== vendored.skill_content_build) fail(`VENDORED.json build ${vendored
 else ok(`guidance v${vendored.npm_version} content ${build} matches VENDORED.json`);
 const guideCount = execFileSync('find', [join(ROOT, 'guidance/skills/modern-web-guidance/guides'), '-name', '*.md'], { encoding: 'utf8' }).trim().split('\n').length;
 if (guideCount < 200) fail(`expected 200+ guides, found ${guideCount}`);
-else ok(`${guideCount} guidance guides present`);
+else ok(`${guideCount} raw guidance guide files present (203 use-case guides + 5 category overviews + 1 alias)`);
 
 // 5. Component local references resolve
 const refRe = [
@@ -117,7 +117,7 @@ for (const p of walk(ROOT)) {
     if (!existsSync(resolve(dirname(p), r))) fail(`${relative(ROOT, p)}: broken markdown link -> ${r}`);
   }
 }
-ok(`${mdChecked} markdown links resolve`);
+ok(`${mdChecked} relative inline markdown links resolve (](...) syntax only; external URLs, reference-style and raw-HTML links not covered)`);
 
 // 8. Playbook route lint: all routed skills present, named, linked, start commands exist
 try {
