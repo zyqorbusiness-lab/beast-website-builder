@@ -1,6 +1,6 @@
 # Design rules of the Zyqor Library
 
-These are the rules every concept in [`site/library/`](../../site/library/) and every skill in [`skills/`](../../skills/) follows. They come from three places:
+These are the rules every concept in [`site/library/`](https://zyqor-portfolio.vercel.app/library/) and every skill in [`skills/`](../../skills/) follows. They come from three places:
 
 - **Sujon's own instructions** while building portfolio v3 and this library.
 - **His premium-design system**, the "Master Award Web Design System" and the website-building guide in his design library. The points below are adapted to his later rules; where the original guide conflicted with them (near-black backgrounds, neon accents, invented metrics), his later rules win.

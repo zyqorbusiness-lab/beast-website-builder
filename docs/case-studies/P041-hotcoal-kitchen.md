@@ -4,7 +4,7 @@
 ingredients onto a real base, press "Fire it", watch it bake, and order. Desktop: tray, board and ticket in three
 columns, drag with a snap ring. Phone (`m.html`): the same pieces, tap to add, sticky total bar.
 
-**Live:** https://zyqor-portfolio.vercel.app/library/p/P041/ · code: [`site/library/p/P041/`](../../site/library/p/P041/)
+**Live:** https://zyqor-portfolio.vercel.app/library/p/P041/ · code: [`site/library/p/P041/`](https://zyqor-portfolio.vercel.app/library/p/P041/)
 **Built:** 30 Oct 2026, in one day, in three versions. **Reference:** a reel by @online.by.annie (Instagram
 DfGDN_fIZsC) showing a pizza-builder site; used for the idea only, nothing copied.
 
@@ -151,4 +151,4 @@ champignons" by frank wouters and "Roasted Bell Peppers" by Ryan Snyder (Wikimed
 pizza" by Scott Bauer, USDA ARS, public domain; "Red onion rings" by Sebastian Wallroth and "Pizza-slicer" by
 Evan-Amos, public domain; Ruthven, Benoît Prieur, Raju C Reddy, Daderot and "Red pepper flakes for pickling"
 (Wikimedia Commons), CC0; "Kitchen Wood" by Rob Tuytel (Poly Haven), CC0; "Marble 012" by ambientCG, CC0. All cropped
-and recoloured as described above. Full list with links: [`site/library/p/P041/credits.json`](../../site/library/p/P041/credits.json).
+and recoloured as described above. Full list with links: [`site/library/p/P041/credits.json`](https://zyqor-portfolio.vercel.app/library/p/P041/).

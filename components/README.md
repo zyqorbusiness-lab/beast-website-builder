@@ -4,7 +4,7 @@
 
 **Live gallery:** https://zyqor-concepts.sites.tab.bot/components/
 
-They were made after a study of current award-level sites (Awwwards Sites of the Year and Sites of the Day, CSS Design Awards) and of Sujon's own design guide; the study is in [`docs/how-top-designers-build-unique-sites.md`](../../docs/how-top-designers-build-unique-sites.md). Every component is written from scratch: techniques are learned, no code or assets are copied.
+They were made after a study of current award-level sites (Awwwards Sites of the Year and Sites of the Day, CSS Design Awards) and of Sujon's own design guide; the study is in [`docs/how-top-designers-build-unique-sites.md`](../docs/how-top-designers-build-unique-sites.md). Every component is written from scratch: techniques are learned, no code or assets are copied.
 
 | # | Component | What it does | Studied from |
 |---|---|---|---|

@@ -1,6 +1,6 @@
 # How top designers build unique websites
 
-A study for Zyqor Studio, written Oct 30 2026. The question (Sujon, Oct 30): *kaisa unique website banate hain*, how do the best designers make sites that do not look like templates? This is the answer, from looking at the work itself, step by step: **idea → story → layout → motion → 3D → sound → micro-interactions → phone and speed**. Each step names real award-winning sites (linked and credited), what they actually do, and the technique worth stealing. The techniques are rebuilt from scratch in [`site/components/`](../site/components/) (live: https://zyqor-concepts.sites.tab.bot/components/).
+A study for Zyqor Studio, written Oct 30 2026. The question (Sujon, Oct 30): *kaisa unique website banate hain*, how do the best designers make sites that do not look like templates? This is the answer, from looking at the work itself, step by step: **idea → story → layout → motion → 3D → sound → micro-interactions → phone and speed**. Each step names real award-winning sites (linked and credited), what they actually do, and the technique worth stealing. The techniques are rebuilt from scratch in [`site/components/`](../components/) (live: https://zyqor-concepts.sites.tab.bot/components/).
 
 > Inspiration only. No code, images, fonts or text from these sites are copied into this repo. Screenshots taken for the study stay private (`work/beast/research_top_sites/`, not published).
 
@@ -42,7 +42,7 @@ The winners do not start from a layout. They start from **one idea that belongs 
 - **[Persepolis Reimagined by Monks for the Getty](https://www.getty.edu/persepolis/)** (SOTY 2022): a museum story told as a reconstruction you scroll through, chapter by chapter, with 360 views and data.
 - **[Belgrade Arbor by Square43](https://belgradearbor.rs/en)** (SOTD Oct 17 2026): starts on a white 3D model of the building's facade, then turns into a green editorial chapter with photos inside an organic, leaf-shaped mask. 7 videos and 2 canvases on the page.
 
-**Steal this:** write the page as 4 to 6 chapters, each with one sentence and one picture, and decide what stays on screen between chapters (the product, a camera, a colour). Components: [`sticky-story`](../site/components/sticky-story/) (pinned picture, chapters scroll past), [`scroll-3d-stage`](../site/components/scroll-3d-stage/) (one 3D object carried through every chapter).
+**Steal this:** write the page as 4 to 6 chapters, each with one sentence and one picture, and decide what stays on screen between chapters (the product, a camera, a colour). Components: [`sticky-story`](../components/sticky-story/) (pinned picture, chapters scroll past), [`scroll-3d-stage`](../components/scroll-3d-stage/) (one 3D object carried through every chapter).
 
 ## 3. Layout: giant type, few elements, one break in the grid
 
@@ -51,7 +51,7 @@ The winners do not start from a layout. They start from **one idea that belongs 
 - **[ESR Bespoke by NIGHTJAR](https://www.esrbespoke.au/)** (SOTD Oct 23 2026): a full-bleed street photo with one short line ("Exceptional is our standard"), then a long list of car brand names in large type where each name reveals a picture on hover.
 - **[Pangram Pangram by Locomotive](https://pangrampangram.com/)** (SOTY 2021): the typefaces are the layout; every card is a specimen.
 
-**Steal this:** one oversized element per screen (a word, a product, a photo) and everything else small; break the grid once per page on purpose (a scattered collage, a rotated card). Components: [`split-text`](../site/components/split-text/) (headline reveals), [`image-trail`](../site/components/image-trail/) (the ESR-style name list with image reveal), [`footer-wordmark`](../site/components/footer-wordmark/).
+**Steal this:** one oversized element per screen (a word, a product, a photo) and everything else small; break the grid once per page on purpose (a scattered collage, a rotated card). Components: [`split-text`](../components/split-text/) (headline reveals), [`image-trail`](../components/image-trail/) (the ESR-style name list with image reveal), [`footer-wordmark`](../components/footer-wordmark/).
 
 ## 4. Motion: tied to scroll and to the pointer, eased, never random
 
@@ -59,7 +59,7 @@ The winners do not start from a layout. They start from **one idea that belongs 
 - **[Forge Automotive by 12 Studio](https://forgeautomotive.co.uk/)** (SOTD Oct 25 2026): infinite scroll, parallax and transitions with GSAP on Next.js.
 - **[A24 by Ravi Klaassens](https://a24.raviklaassens.com/)**: page changes without a white flash (Barba.js), so the site feels like one object.
 
-**Steal this:** every movement either follows the scroll position or the pointer, and uses one family of curves (Sujon's Drive: `cubic-bezier(.16,1,.3,1)` to settle, `cubic-bezier(.65,0,.35,1)` to wipe). No motion that plays on its own and loops. Respect `prefers-reduced-motion` always. Components: [`split-text`](../site/components/split-text/), [`marquee`](../site/components/marquee/) (speed follows scroll velocity), [`page-transition`](../site/components/page-transition/) (circle reveal from the click point, native View Transitions API), [`preloader`](../site/components/preloader/) (real byte progress, then a wipe).
+**Steal this:** every movement either follows the scroll position or the pointer, and uses one family of curves (Sujon's Drive: `cubic-bezier(.16,1,.3,1)` to settle, `cubic-bezier(.65,0,.35,1)` to wipe). No motion that plays on its own and loops. Respect `prefers-reduced-motion` always. Components: [`split-text`](../components/split-text/), [`marquee`](../components/marquee/) (speed follows scroll velocity), [`page-transition`](../components/page-transition/) (circle reveal from the click point, native View Transitions API), [`preloader`](../components/preloader/) (real byte progress, then a wipe).
 
 ## 5. 3D: a real object, lit like a photo, doing one thing
 
@@ -68,7 +68,7 @@ The winners do not start from a layout. They start from **one idea that belongs 
 - **[Igloo Inc](https://www.igloo.inc/)** and **[Messenger](https://messenger.abeto.co)**: whole worlds in WebGL, both by abeto.
 - **[Overworld Audio by Rogier de Boevé](https://overworldaudio.com/)** (SOTD Oct 15 2026): dark, almost empty 3D HUD that only comes alive with sound.
 
-**Steal this:** one real model (scanned or modelled, CC0/CC-BY, credited), studio HDRI lighting, ACES tone mapping, a soft contact shadow, and one camera move per chapter. The phone gets the same model. Never grey "clay" materials (Zyqor's own N004 mistake) and never code-made placeholder shapes. Component: [`scroll-3d-stage`](../site/components/scroll-3d-stage/) (a 19,248-triangle CC0 scan through four chapters, lazy, poster fallback). Skill: [`model-optimisation-phone`](../skills/model-optimisation-phone/).
+**Steal this:** one real model (scanned or modelled, CC0/CC-BY, credited), studio HDRI lighting, ACES tone mapping, a soft contact shadow, and one camera move per chapter. The phone gets the same model. Never grey "clay" materials (Zyqor's own N004 mistake) and never code-made placeholder shapes. Component: [`scroll-3d-stage`](../components/scroll-3d-stage/) (a 19,248-triangle CC0 scan through four chapters, lazy, poster fallback). Skill: [`model-optimisation-phone`](../skills/model-optimisation-phone/).
 
 ## 6. Sound: opt-in, short, part of the idea
 
@@ -83,7 +83,7 @@ The winners do not start from a layout. They start from **one idea that belongs 
 - **Footers people remember**: Emotion Agency's footer and Opal's giant outline "opal" wordmark at the bottom of the page.
 - **Real states**: Don't Board Me has a playful 404 and a pricing page Awwwards lists as an element.
 
-**Steal this:** every button gets hover, press and focus states; every form gets a success state; the last screen (footer) is designed as carefully as the first. Components: [`magnetic-button`](../site/components/magnetic-button/), [`cursor-follower`](../site/components/cursor-follower/), [`mega-menu`](../site/components/mega-menu/), [`liquid-glass-card`](../site/components/liquid-glass-card/), [`pricing-table`](../site/components/pricing-table/), [`quote-carousel`](../site/components/quote-carousel/), [`footer-wordmark`](../site/components/footer-wordmark/).
+**Steal this:** every button gets hover, press and focus states; every form gets a success state; the last screen (footer) is designed as carefully as the first. Components: [`magnetic-button`](../components/magnetic-button/), [`cursor-follower`](../components/cursor-follower/), [`mega-menu`](../components/mega-menu/), [`liquid-glass-card`](../components/liquid-glass-card/), [`pricing-table`](../components/pricing-table/), [`quote-carousel`](../components/quote-carousel/), [`footer-wordmark`](../components/footer-wordmark/).
 
 ## 8. Phone and speed: where most "beautiful" sites lose
 
@@ -109,7 +109,7 @@ His signature: a light grey or blurred-colour backdrop, **one big rounded browse
 | J | Process as content | Brief, moodboard, type and colour card, wireframe, final on a monitor, desktop and phone side by side. |
 | K | Physics and 3D scroll | Draggable falling objects, a product turning in 3D with scroll, pinned horizontal tracks. |
 
-Where these live in this repo: A, B, C, E, F and D are combined in the portfolio's Worlds section; G is the [`footer-wordmark`](../site/components/footer-wordmark/) and [`split-text`](../site/components/split-text/) components; I is the [`pricing-table`](../site/components/pricing-table/) odometer and [`liquid-glass-card`](../site/components/liquid-glass-card/); K is [`scroll-3d-stage`](../site/components/scroll-3d-stage/). The concept library assigns one or two pattern letters per concept so no two concepts repeat a design.
+Where these live in this repo: A, B, C, E, F and D are combined in the portfolio's Worlds section; G is the [`footer-wordmark`](../components/footer-wordmark/) and [`split-text`](../components/split-text/) components; I is the [`pricing-table`](../components/pricing-table/) odometer and [`liquid-glass-card`](../components/liquid-glass-card/); K is [`scroll-3d-stage`](../components/scroll-3d-stage/). The concept library assigns one or two pattern letters per concept so no two concepts repeat a design.
 
 ## 10. Before you build: ten questions
 

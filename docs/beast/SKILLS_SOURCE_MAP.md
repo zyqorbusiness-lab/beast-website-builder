@@ -169,4 +169,4 @@ L39-79 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 
 | Reference | Where it went |
 |---|---|
-| Reel by @online.by.annie (Instagram DfGDN_fIZsC): a pizza-builder site branded "Tondo" (tray of real-photo bowls, drag onto the base, bake, order card), sent by Sujon 10:42 AM IST | [`interactive-product-configurator`](../../skills/interactive-product-configurator/) (lead example) and concept [P041 Hotcoal Kitchen](../../site/library/p/P041/) |
+| Reel by @online.by.annie (Instagram DfGDN_fIZsC): a pizza-builder site branded "Tondo" (tray of real-photo bowls, drag onto the base, bake, order card), sent by Sujon 10:42 AM IST | [`interactive-product-configurator`](../../skills/interactive-product-configurator/) (lead example) and concept [P041 Hotcoal Kitchen](https://zyqor-portfolio.vercel.app/library/p/P041/) |

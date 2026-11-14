@@ -57,6 +57,7 @@ const refRe = [
 ];
 function* walk(dir) {
   for (const d of readdirSync(dir, { withFileTypes: true })) {
+    if (d.isDirectory() && d.name === '.git') continue;
     const p = join(dir, d.name);
     if (d.isDirectory()) yield* walk(p);
     else yield p;
@@ -94,6 +95,29 @@ for (const p of [...walk(join(ROOT, 'components')), ...walk(join(ROOT, 'skills')
   }
 }
 ok('no stale site/ layout references');
+
+// 7. Markdown links resolve on disk
+// Every relative link target in every .md file must exist. Exceptions:
+// - skills/reference-to-video/kit/examples/ref8_breakdown/breakdown.md links to
+//   contact sheets that are intentionally not shipped (130 MB); SKILL.md
+//   documents regenerating them with ref_breakdown.py.
+let mdChecked = 0;
+const MD_ALLOW = [/ref8_breakdown\/breakdown\.md:.*sheets\/sec_\d+\.jpg$/];
+for (const p of walk(ROOT)) {
+  if (!p.endsWith('.md')) continue;
+  const t = readFileSync(p, 'utf8');
+  for (const m of t.matchAll(/\]\(([^)\s]+)\)/g)) {
+    let r = m[1];
+    if (/^(https?:|mailto:|tel:|#)/.test(r)) continue;
+    r = decodeURIComponent(r.split('#')[0]);
+    if (!r) continue;
+    const rel = `${relative(ROOT, p)}:${r}`;
+    if (MD_ALLOW.some((a) => a.test(rel))) continue;
+    mdChecked++;
+    if (!existsSync(resolve(dirname(p), r))) fail(`${relative(ROOT, p)}: broken markdown link -> ${r}`);
+  }
+}
+ok(`${mdChecked} markdown links resolve`);
 
 console.log(failures ? `\n${failures} FAILURES` : '\nvalidate: PASS');
 process.exit(failures ? 1 : 0);
