@@ -1,0 +1,32 @@
+<!-- Removed from portfolio studio/case (Kilnfold) "Design system" section on 2026-11-15 per owner instruction: no live component showcase on the portfolio. Styles: studio/case stylesheet classes .bento/.b/.kbtn/.badge/.pcard/.wl/.cols/.icons/.cnt; handlers removed from studio/case/core.js (stock counter + waitlist demo). Restore markup + those CSS/JS pieces together. -->
+
+<section class="cs" id="system" data-title="Design system">
+  <header class="cs-head" data-rv><span class="cs-n mono">04</span><h2>Design system</h2><p>Live components, not pictures of them. Hover, tab and press them.</p></header>
+  <div class="bento">
+    <div class="b b-btn" data-rv><span class="b-l mono">Buttons</span>
+      <div class="btns"><button class="kbtn kbtn-p mag" type="button">Join Firing 08 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="kbtn kbtn-s" type="button">See the pieces</button><button class="kbtn kbtn-t" type="button">Studio visits <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    </div>
+    <div class="b b-badge" data-rv><span class="b-l mono">Firing badge</span>
+      <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V9a7 7 0 0 1 14 0v12M3 21h18M9 21v-5a3 3 0 0 1 6 0v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><b>Firing 07</b><i>14 Nov &middot; 40 pieces</i></span>
+      <span class="badge badge-out"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Firing 06</b><i>Sold out in 3 h 12 min</i></span>
+    </div>
+    <div class="b b-count" data-rv><span class="b-l mono">Stock count</span>
+      <p class="cnt"><b class="cnt-n" data-count="12">12</b><span>of 40 left</span></p>
+      <div class="bar"><i style="--p:.7"></i></div>
+      <button class="kbtn kbtn-s kbtn-sm" type="button" data-buy>Simulate a sale</button>
+    </div>
+    <div class="b b-card" data-rv><span class="b-l mono">Piece card</span>
+      <div class="pcard"><div class="pcard-img"><img src="../../assets/studio/case/p_bowl-d.webp" width="900" height="675" alt="A glazed stoneware bowl" loading="lazy" decoding="async"></div><p><b>Wide bowl</b><span>Ash glaze &middot; 18 cm</span></p><small>4 of 6 left</small></div>
+    </div>
+    <div class="b b-field" data-rv><span class="b-l mono">Waitlist field</span>
+      <form class="wl" onsubmit="return false"><label for="wl-d">Email for Firing 08</label><div class="wl-row"><input id="wl-d" type="email" placeholder="you@studio.in" autocomplete="off"><button class="kbtn kbtn-p kbtn-sm" type="submit" data-wl>Hold my place</button></div><p class="wl-msg mono" aria-live="polite"></p></form>
+    </div>
+    <div class="b b-grid" data-rv><span class="b-l mono">Grid &middot; 12 col, 24 gutter</span>
+      <div class="cols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <ul class="space mono"><li style="--s:4px">4</li><li style="--s:8px">8</li><li style="--s:12px">12</li><li style="--s:16px">16</li><li style="--s:24px">24</li><li style="--s:40px">40</li><li style="--s:64px">64</li></ul>
+    </div>
+    <div class="b b-icons" data-rv><span class="b-l mono">Icons &middot; 1.5 px line</span>
+      <div class="icons"><span title="kiln"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V9a7 7 0 0 1 14 0v12M3 21h18M9 21v-5a3 3 0 0 1 6 0v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span title="bowl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18a9 9 0 0 1-18 0zM9 20h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span title="clock"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span title="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span title="flame"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.4 1.3-3.6 2.4-4.8.3 1.6 1.1 2.6 2.1 2.8C11 8.6 11.2 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span title="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span title="list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span title="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    </div>
+  </div>
+</section>
