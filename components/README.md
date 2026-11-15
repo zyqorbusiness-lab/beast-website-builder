@@ -18,7 +18,7 @@ They were made after a study of current award-level sites (Awwwards Sites of the
 | 08 | [Image trail and hover reveal](image-trail/) | Pointer image trail and a hover-reveal project list that turns into a tap accordion on phones. | Brandon Yasin, G. Colombel (SOTD Oct 2026) |
 | 09 | [Preloader](preloader/) | Counts real bytes of the model/HDRI/images, never flashes on cached loads, panel-wipe exit. | Lusion, Igloo Inc; Drive rule: real progress only |
 | 10 | [Page transition](page-transition/) | Circle reveal from the click point between pages (native View Transitions + fallback) and for a theme switch. | Drive spec MA 6.2; A24 (Barba), Belgrade Arbor |
-| 11 | [Pricing switcher](pricing-table/) | Zyqor's real $300 / $1k / $10k tiers: squish pill, odometer price, ARIA tabs. | Drive spec MA 6.2 items 1 and 4; his Oct 28 prices |
+| 11 | [Pricing switcher](pricing-table/) | Pricing tiers with a squish pill, an odometer price and real keyboard tabs. | Drive spec MA 6.2 items 1 and 4; sample values |
 | 12 | [Quote carousel](quote-carousel/) | Native scroll-snap swipe, mouse drag with inertia, accessible autoplay with Pause; real quotes, no fake reviews. | WAI-ARIA carousel pattern; his no-fake-testimonials rule |
 | 13 | [Mega menu](mega-menu/) | Desktop mega panels with hover intent + keyboard; phone full-screen accordion sheet with focus trap. | ESR Bespoke (SOTD Oct 23 2026), Star Atlas |
 | 14 | [Footer with wordmark](footer-wordmark/) | Giant per-letter rising wordmark, Gmail-on-desktop / mailto-on-phone, copy email, local time, legal links. | Emotion Agency, Mana Yerba Mate; ayzz pattern G |

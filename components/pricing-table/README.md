@@ -1,6 +1,6 @@
 # Pricing switcher
 
-Zyqor's real $300 / $1k / $10k tiers: squish pill, odometer price, ARIA tabs.
+Pricing tiers with a squish pill, an odometer price and real keyboard tabs.
 
 **Live demo:** [zyqor-concepts.sites.tab.bot/components/pricing-table/](https://zyqor-concepts.sites.tab.bot/components/pricing-table/) (desktop and phone)
 
