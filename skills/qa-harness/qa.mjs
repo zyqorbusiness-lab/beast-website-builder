@@ -13,7 +13,7 @@ import path from 'node:path';
 import { serveDir } from './lib/server.mjs';
 import { openBrowser } from './lib/browser.mjs';
 import { walkHtml, toPages, crawl, staticRefs, isSkippable } from './lib/pages.mjs';
-import { initProbe, webglProbe, overflowProbe, outlineSelectors, stuckRevealProbe, contentProbe, frameProbe } from './lib/probes.mjs';
+import { initProbe, webglProbe, overflowProbe, outlineSelectors, stuckRevealProbe, contentProbe, frameProbe, overlapProbe } from './lib/probes.mjs';
 import { pixelDiff } from './lib/diff.mjs';
 import { writeReports } from './lib/report.mjs';
 
@@ -160,6 +160,22 @@ async function runOne(browser, base, page, profName, prof, opts, outDir) {
     };
     await shot('00top', 72);
 
+    // Text collisions at the top of the page (hero composition settles first).
+    const seenOverlaps = new Set();
+    const mergeOverlaps = async () => {
+      try {
+        const o = await pg.evaluate(overlapProbe);
+        if (!o?.pairs?.length) return;
+        for (const p of o.pairs) {
+          const k = p.a + '|' + p.b;
+          if (seenOverlaps.has(k)) continue;
+          seenOverlaps.add(k);
+          (R.overlaps ||= []).push(p);
+        }
+      } catch {}
+    };
+    await mergeOverlaps();
+
     // Scroll the whole page like a person would, checking width at every stop.
     const vh = prof.h;
     let H = await pg.evaluate(() => document.documentElement.scrollHeight - innerHeight).catch(() => 0);
@@ -190,6 +206,7 @@ async function runOne(browser, base, page, profName, prof, opts, outDir) {
     R.steps = steps;
     await sleep(400);
     R.stuck = await pg.evaluate(stuckRevealProbe).catch(() => []);
+    await mergeOverlaps();
     R.content = await pg.evaluate(contentProbe).catch(e => ({ error: e.message }));
     R.webgl = await pg.evaluate(webglProbe).catch(() => null);
     if (worst) {
@@ -230,6 +247,10 @@ function judge(R, opts) {
   for (const b of c.broken || []) fail.push('broken image: ' + b);
   if (c.noAltCount) warn.push(`${c.noAltCount} image(s) without alt text`);
   if (R.stuck?.length) warn.push(`${R.stuck.length} text block(s) still invisible after a full scroll (stuck reveal?): "${R.stuck[0].text}"`);
+  if (R.overlaps?.length) {
+    const p = R.overlaps[0];
+    warn.push(`${R.overlaps.length} pair(s) of visible text blocks collide: ${p.a} over ${p.b} (${p.w}x${p.h}px, near y=${p.at}). Check the screenshot; deliberate layered type exists, so this is a warning`);
+  }
   for (const w of R.warnings.slice(0, 5)) warn.push('console warning: ' + w);
   if (R.warnings.length > 5) warn.push(`+${R.warnings.length - 5} more console warnings`);
   if (c.cls > 0.1) warn.push(`layout shift while loading: CLS ${c.cls} (over 0.1)`);

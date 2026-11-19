@@ -8,6 +8,7 @@ Copy this into the hand-off of every page or site. The first block is what the h
 - [ ] 0 console errors and 0 uncaught errors on every page at every size
 - [ ] 0 failed requests and 0 4xx/5xx
 - [ ] 0 horizontal overflow at 390 **and** 360, checked down the whole page
+- [ ] Every overlapping-text warning looked at on the screenshot: a bug to fix, or deliberate layered type to keep
 - [ ] 0 broken internal links or missing assets
 - [ ] External links checked with `--external` (walled sites opened by hand) and opening in a new tab
 - [ ] Every warning read and either fixed or explained in one line
@@ -19,7 +20,7 @@ Copy this into the hand-off of every page or site. The first block is what the h
 
 - [ ] Opened on a **real iPhone** (Safari) and a **real Android** (Chrome): readable without zoom, taps land, nothing jumps
 - [ ] Scrolled by finger on the real phone: smooth, no stutter when the 3D loads
-- [ ] Looked at every screenshot in `report.html`: crops, alignment, spacing, text wrapping, nothing cut off
+- [ ] Looked at every screenshot in `report.html`: crops, alignment, spacing, text wrapping, overlapping elements, nothing cut off
 - [ ] Reduced motion turned on in the phone's settings: content still makes sense, nothing spins on its own
 - [ ] Keyboard only: every control reachable, focus visible
 - [ ] Lighthouse (Chrome DevTools, mobile): real numbers recorded, not targets

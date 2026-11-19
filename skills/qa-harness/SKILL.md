@@ -19,6 +19,7 @@ The rule this skill exists for: **no page ships on "it looked fine on my screen"
 | Images | an image failed to load | images without `alt` |
 | WebGL | the page asked for WebGL and got none although the browser has it | — |
 | Reveals | — | text still invisible after a full scroll (a scroll reveal that never fired) |
+| Overlap | — | two visible text blocks collide (both elements named, the overlap size and where on the page). Warn-level: deliberate layered type exists, so the screenshot decides |
 | Reduced motion | — | endless CSS animations, or the screen still moving on its own (pixel diff, with the area and a red diff image) |
 | Layout shift | — | CLS over 0.1 while loading |
 | Links | an internal link or asset is missing; an external link is broken (with `--external`) | an `#anchor` with no matching id; an external link without `target="_blank"` (FAIL with `--preset zyqor`) |

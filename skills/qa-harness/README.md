@@ -37,6 +37,7 @@ For every page, at every size, it loads the page, waits for it to settle, scroll
 - **Horizontal overflow at every scroll position** — and the **overflow finder** names the element that sticks out past the screen and past its own parent, by how many pixels, plus the container where the fix belongs ("a flex row that does not wrap: let items shrink, wrap them, or make the row scroll"). The evidence screenshot is taken wider than the phone with the screen edge drawn as a dashed line.
 - **WebGL**: whether the browser had it, what drew it, and whether the page asked for it and got nothing.
 - **Stuck reveals**: text still invisible after a full scroll, the classic scroll-reveal bug.
+- **Colliding text**: two visible text blocks overlapping each other (both elements named, with the overlap size and page position). A warning, not a failure, because deliberate layered type exists; the screenshot decides.
 - **Reduced motion**: endless animations still running, and a pixel diff that catches a 3D scene that keeps spinning on its own (with the area and a red diff image).
 - **Images**: failed loads, missing `alt`.
 - **Layout shift** while loading (CLS).

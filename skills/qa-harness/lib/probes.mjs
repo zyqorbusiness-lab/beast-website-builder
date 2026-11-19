@@ -201,6 +201,76 @@ export function contentProbe() {
   };
 }
 
+// Visible text blocks that collide with each other. The DOM checks above cannot see
+// this: every box is a valid rectangle, the bug only exists where two of them meet.
+// Warn-level on purpose: overlapping display type and layered captions are real
+// design moves, so the harness names the pair and the screenshot decides.
+// Fixed/sticky chrome (navs, tab bars) is skipped: it is meant to overlay content.
+export function overlapProbe(maxFindings = 8) {
+  const SEL = 'h1,h2,h3,h4,h5,h6,p,li,a,button,label,figcaption,blockquote,dt,dd,summary,td,th,span';
+  const ownText = el => [...el.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join('').trim();
+  const describe = el => {
+    let s = el.tagName.toLowerCase();
+    if (el.id) return s + '#' + el.id;
+    const cls = (typeof el.className === 'string' ? el.className : '').trim().split(/\s+/).filter(Boolean)[0];
+    if (cls) s += '.' + cls;
+    const sib = el.parentElement ? [...el.parentElement.children].filter(x => x.tagName === el.tagName) : [];
+    if (sib.length > 1) s += `:nth-of-type(${sib.indexOf(el) + 1})`;
+    return s;
+  };
+  const hidden = el => {
+    for (let e = el; e && e.nodeType === 1; e = e.parentElement) {
+      const cs = getComputedStyle(e);
+      if (cs.display === 'none' || cs.visibility === 'hidden' || e.hidden || e.getAttribute('aria-hidden') === 'true') return true;
+      if (e.closest('dialog:not([open]), [inert], details:not([open]) > :not(summary)')) return true;
+      if (parseFloat(cs.opacity) < 0.05) return true;
+    }
+    return false;
+  };
+  // Chrome layers (fixed navs, sticky bars) are meant to overlay content: skip
+  // anything positioned fixed/sticky itself OR living inside such a layer.
+  const inChromeLayer = el => {
+    for (let e = el; e && e.nodeType === 1; e = e.parentElement) {
+      const p = getComputedStyle(e).position;
+      if (p === 'fixed' || p === 'sticky') return true;
+    }
+    return false;
+  };
+  const items = [];
+  let truncated = false;
+  for (const el of document.querySelectorAll(SEL)) {
+    if (items.length >= 400) { truncated = true; break; }
+    const t = ownText(el);
+    if (t.length < 2) continue;
+    if (inChromeLayer(el)) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 4 || r.height < 4) continue;
+    if (hidden(el)) continue;
+    items.push({ el, r, t: t.replace(/\s+/g, ' ').slice(0, 40) });
+  }
+  const out = [];
+  for (let i = 0; i < items.length && out.length < maxFindings; i++) {
+    for (let j = i + 1; j < items.length; j++) {
+      const a = items[i], b = items[j];
+      if (a.el.contains(b.el) || b.el.contains(a.el)) continue;   // parent/child is normal nesting
+      const x = Math.min(a.r.right, b.r.right) - Math.max(a.r.left, b.r.left);
+      const y = Math.min(a.r.bottom, b.r.bottom) - Math.max(a.r.top, b.r.top);
+      if (x < 6 || y < 6) continue;                               // line boxes can brush by a few px
+      const area = x * y;
+      const smaller = Math.min(a.r.width * a.r.height, b.r.width * b.r.height);
+      if (area < 60 || area / smaller < 0.08) continue;           // demand a real collision, not a touch
+      out.push({
+        a: describe(a.el), b: describe(b.el),
+        w: Math.round(x), h: Math.round(y),
+        at: Math.round(Math.max(a.r.top, b.r.top) + scrollY),
+        text: a.t || b.t,
+      });
+      if (out.length >= maxFindings) break;
+    }
+  }
+  return { pairs: out, checked: items.length, truncated };
+}
+
 // Frame timing while scrolling, used by the CPU-throttle smoke run.
 export function frameProbe(ms) {
   return new Promise(resolve => {
