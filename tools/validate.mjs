@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Structural self-check for this repo. Exit 1 on any failure.
-// Checks: root docs present, every skill has SKILL.md, all 14 components have
+// Checks: root docs present (AGENTS.md included: coding agents read it first),
+// every skill has SKILL.md, all 14 components have
 // index.html + README.md, guidance provenance matches the vendored build,
 // every local file reference inside components resolves on disk, and no
 // leftover references to the source repo's site/ layout remain.
@@ -15,7 +16,7 @@ const fail = (msg) => { failures++; console.error('FAIL ' + msg); };
 const ok = (msg) => console.log('ok   ' + msg);
 
 // 1. Root documents
-for (const f of ['README.md', 'WORKFLOW.md', 'LICENSE', 'NOTICE', 'CREDITS.md', 'docs/INTEGRATION.md']) {
+for (const f of ['README.md', 'WORKFLOW.md', 'AGENTS.md', 'LICENSE', 'NOTICE', 'CREDITS.md', 'docs/INTEGRATION.md']) {
   existsSync(join(ROOT, f)) ? ok(f) : fail(`missing root doc ${f}`);
 }
 
@@ -57,7 +58,7 @@ const refRe = [
 ];
 function* walk(dir) {
   for (const d of readdirSync(dir, { withFileTypes: true })) {
-    if (d.isDirectory() && d.name === '.git') continue;
+    if (d.isDirectory() && (d.name === '.git' || d.name === 'node_modules')) continue;
     const p = join(dir, d.name);
     if (d.isDirectory()) yield* walk(p);
     else yield p;

@@ -77,10 +77,14 @@ CLI directly does not. Details in [guidance/VENDORED.json](guidance/VENDORED.jso
   stay in the source repo, only the vendored flight-helmet is indexed here),
   `library-build.mjs`, `qa-library.mjs`, `new-concept.mjs` (library
   maintainers' tooling, operate on a `site/` tree) and `video-flow/`.
-- **[tests/](tests/)** - dependency-free `node:test` smoke tests. CI is live
+- **[tests/](tests/)** - dependency-free `node:test` smoke tests plus
+  regression tests for the router's `--step` modes and the qa-harness
+  collision check (the collision tests use the harness's own browser and skip
+  with a message when it is not installed; CI installs it so they always run
+  there). CI is live
   on this repo: [.github/workflows/ci.yml](.github/workflows/ci.yml) runs
-  `validate.mjs`, the smoke tests and a guidance legacy-scan on every push
-  (green on commit `a037b07`, 2026-11-14). Forks get the same workflow
+  `validate.mjs`, the smoke and regression tests and a guidance legacy-scan on every push
+  (green on commit `d438ac6`, 2026-11-19). Forks get the same workflow
   automatically. A reference copy is kept at [tools/ci.yml](tools/ci.yml);
   edit `.github/workflows/ci.yml` and keep the two in sync.
 

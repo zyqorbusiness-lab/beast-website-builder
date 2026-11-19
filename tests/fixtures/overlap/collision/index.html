@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixture: colliding text</title>
+<style>
+  body { font-family: sans-serif; margin: 0; }
+  .hero { position: relative; height: 300px; background: #eee; }
+  .hero h1 { position: absolute; top: 40px; left: 20px; font-size: 48px; margin: 0; }
+  .hero p { position: absolute; top: 60px; left: 24px; font-size: 20px; margin: 0; }
+  section { padding: 40px; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>Big headline here</h1>
+  <p>This paragraph collides with the headline box above it.</p>
+</div>
+<section><p>Normal paragraph, no collision.</p></section>
+</body>
+</html>

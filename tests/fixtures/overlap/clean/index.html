@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixture: clean layout with sticky nav</title>
+<style>
+  body { font-family: sans-serif; margin: 0; color: #1c1c1c; }
+  .nav { position: sticky; top: 0; z-index: 5; display: flex; align-items: center;
+         justify-content: space-between; gap: 16px; padding: 14px 24px; background: #fff; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; }
+  main { padding: 40px 24px; }
+  h1 { font-size: 44px; margin: 0 0 16px; }
+  p.lede { font-size: 18px; max-width: 60ch; margin: 0 0 24px; }
+  section { margin-bottom: 48px; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">FixtureBrand</a>
+  <nav><a href="index.html">Home</a></nav>
+</header>
+<main>
+  <section>
+    <h1>A calm headline with its own space</h1>
+    <p class="lede">A lede paragraph in normal flow. Nothing overlaps anything else here,
+       and the sticky brand link above must not be reported as colliding with this text.</p>
+  </section>
+  <section>
+    <h2>Second section</h2>
+    <p>More ordinary content to give the page some height for the scroll pass.</p>
+  </section>
+</main>
+</body>
+</html>
