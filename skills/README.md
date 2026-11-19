@@ -43,7 +43,7 @@ Sujon, 3 Nov 2026: the HTML/CSS "3D" promos looked cheap next to his reference r
 | [`artcraft-tools`](artcraft-tools/) | The 15 free ArtCraft apps (PhotoCraft … Craft Anything): what each does, which Adobe/Office app it replaces, maturity as of Nov 2026, and where it fits. |
 | [`reference-frame-breakdown`](reference-frame-breakdown/) | Break a reference video into 60 frames per second and write down, for every second: effect, animation + easing, text, font, colour, glow, background, subject, b-roll, transition, camera and sfx - before editing anything. |
 
-## Process and delivery (4 skills, added 30 Oct 2026)
+## Process and delivery (5 skills, 4 added 30 Oct 2026, gravitas-thinking 19 Nov 2026)
 
 Sujon, 30 Oct 2026: before any website, a full spec and storyboard first; real assets only; a clean handover. These three run around the design skills above: one before the build, one during it, one at the client end.
 
@@ -53,6 +53,7 @@ Sujon, 30 Oct 2026: before any website, a full spec and storyboard first; real a
 | [`asset-sources-and-licence-check`](asset-sources-and-licence-check/) | Where to get real CC0 / CC BY photos, textures, HDRIs and 3D models (Commons, Poly Haven, ambientCG, Smithsonian, Sketchfab filters, Openverse, Unsplash/Pexels notes), how to verify a licence on the asset's own page, the credit file the gate reads, visible CC BY credits. `licence-probe.mjs` reads the licence from the source's API and drafts the credit file. No AI images. | 320 |
 | [`client-delivery-kit`](client-delivery-kit/) | What we send a client: brief form, price tiers (from $300, up to $10k; tier contents to be filled by Sujon), stage timeline, revision policy, quote/launch message templates and the handover checklist (domain, hosting, credentials, credits, analytics, Search Console). | 293 |
 | [`kit-packaging-and-handoff`](kit-packaging-and-handoff/) | Package a kit / zip / PDF for a person who will hand it to an AI agent: nothing the user ever said may go missing, every script runs from a clean unzip, and claims about what was viewed or checked are exact. | 35 |
+| [`gravitas-thinking`](gravitas-thinking/) | A model-neutral working discipline for coding agents, adapted from Gravitas (MIT): six working agreements (ground before mutating, declared scope, fresh executed evidence, no blind retries, contract first, honest limits), planning depth by risk, and paste-ready adapters for Gemini, Claude, ChatGPT, AGENTS.md agents and any chat model. | 107 |
 
 Also: the one-page ship checklist [`docs/QA_CHECKLIST.md`](../docs/QA_CHECKLIST.md) and case studies in [`docs/case-studies/`](../docs/case-studies/) (first: [P041 Hotcoal Kitchen, the pizza built three times](../docs/case-studies/P041-hotcoal-kitchen.md)).
 

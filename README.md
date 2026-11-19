@@ -1,7 +1,7 @@
 # Beast Website Builder
 
 One free toolkit for designing and building premium websites with an AI coding
-agent: **36 design skills** that teach the craft, **14 production UI
+agent: **37 design skills** that teach the craft, **14 production UI
 components** you can drop in, **203 modern-web use-case guides with a search
 CLI** that keep the code current, and a **workflow** that ties them together
 with an evidence gate before anything ships.
@@ -12,7 +12,7 @@ It combines two repos that were never competitors:
 |---|---|---|
 | Design brain | [best-website-designer](https://github.com/zyqorbusiness-lab/best-website-designer) (Zyqor Studio, MIT) | How to make a site look and feel hand-made and premium: idea, colour, type, layout, motion, 3D, phone parity, copy, QA. |
 | Technical guardrail | [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance) (Google Chrome + Edge + Firefox + MDN stewards, Apache-2.0) | What the platform can do today: search 203 use-case guides (250 indexed platform features) and scan code for legacy patterns before you write UI. |
-| Build loop | this repo (+ [Gravitas](https://github.com/udaysharmadev/Gravitas) invariants, credited) | How to run the two together: brief → design → guidance-checked build → measured QA → evidence-based ship. See [WORKFLOW.md](WORKFLOW.md). |
+| Build loop | this repo (+ [Gravitas](https://github.com/udaysharmadev/Gravitas) invariants, adapted in [skills/gravitas-thinking](skills/gravitas-thinking/)) | How to run the two together: brief → design → guidance-checked build → measured QA → evidence-based ship. See [WORKFLOW.md](WORKFLOW.md). |
 
 No paid dependencies. Static files, Node >= 22 scripts, self-hosted assets.
 
@@ -43,12 +43,16 @@ CLI directly does not. Details in [guidance/VENDORED.json](guidance/VENDORED.jso
 
 ## What's inside
 
-- **[skills/](skills/README.md)** - 36 self-contained skills (37 entries
+- **[skills/](skills/README.md)** - 37 self-contained skills (38 entries
   including the index README). Each skill is a folder
   an agent (or a person) can read: `SKILL.md` with rules, numbers and reasons,
   runnable scripts, a working example and a pre-ship checklist. Start with
   [premium-website-playbook](skills/premium-website-playbook/) - it names the
-  skill and the gate for every step from brief to deploy.
+  skill and the gate for every step from brief to deploy. New here as a coding
+  agent? [AGENTS.md](AGENTS.md) is your entry point, and
+  [gravitas-thinking](skills/gravitas-thinking/) carries the working
+  discipline with paste-ready adapters for Gemini, Claude, ChatGPT and other
+  models.
 - **[components/](components/README.md)** - 14 reusable UI components
   (magnetic button, split text, liquid glass card, sticky story, marquee,
   cursor follower, image trail, preloader, page transition, pricing switcher,

@@ -8,7 +8,7 @@
 | Design skills, components, docs | Sujon Hoque (Zyqor Studio) | MIT | `skills/`, `components/`, `docs/`, `tools/`, `tests/` |
 | scroll-world (engine rules adapted) | cyw | MIT | mapped in `docs/beast/SKILLS_SOURCE_MAP.md` |
 | three.js | three.js authors | MIT | `components/_shared/vendor/three/` |
-| Gravitas (methodology credit) | udaysharmadev | MIT | referenced in `WORKFLOW.md`, not vendored |
+| Gravitas (six invariants adapted) | udaysharmadev | MIT | `skills/gravitas-thinking/` (model-neutral skill + per-model adapters; runtime not vendored), referenced in `WORKFLOW.md` and `AGENTS.md` |
 
 ## Bundled assets (components/_shared/assets/)
 

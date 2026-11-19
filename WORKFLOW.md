@@ -5,7 +5,8 @@ from the skills; implementation calls get checked against Modern Web Guidance
 before code is written; completion is gated on executed evidence.
 
 The evidence rules below follow the six invariants of
-[Gravitas](https://github.com/udaysharmadev/Gravitas) (MIT, udaysharmadev):
+[Gravitas](https://github.com/udaysharmadev/Gravitas) (MIT, udaysharmadev),
+adapted for any coding model in [skills/gravitas-thinking](skills/gravitas-thinking/):
 ground before mutating, stay in declared scope, completion needs fresh
 executed evidence, never exact-retry a failure, satisfy the stated contract,
 and say what you cannot verify. Read the upstream skill for the full method;
