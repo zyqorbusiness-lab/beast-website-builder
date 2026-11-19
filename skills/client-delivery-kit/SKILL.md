@@ -8,6 +8,8 @@ version: 1.0.0
 
 # Client delivery kit
 
+> **Which skill when:** the paperwork we send the client lives here. The end-to-end build-and-ship process is [client-site-delivery-workflow](../client-site-delivery-workflow/); packaging a kit / zip / PDF for another AI agent is [kit-packaging-and-handoff](../kit-packaging-and-handoff/). Three different jobs, three skills.
+
 [`client-site-delivery-workflow`](../client-site-delivery-workflow/) is *how* we build and ship a client site. This
 kit is *what we send the client* at each step: the forms, the prices, the dates, the rules for changes and the
 handover list. Everything here is written to be copied into WhatsApp or email as it is.

@@ -8,6 +8,8 @@ version: 1.0.0
 
 # The one big idea
 
+> **Which skill when:** this one finds the ONE idea a single site is built around and storyboards it. For generating many concept directions (a concept library, pitch options), use [unique-concepts](../unique-concepts/).
+
 Sujon, 30 Oct 2026: *"kaisa ek unique premium advanced website banta hai"*. The answer from studying Awwwards
 winners (`docs/how-top-designers-build-unique-sites.md`): they do not start from a layout. They start from **one
 idea that belongs to the client**, and every colour, chapter, motion and interaction serves that idea.

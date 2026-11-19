@@ -23,8 +23,16 @@ Quick start (Node 18+, no install, run from the repo root):
 ```bash
 node skills/premium-website-playbook/scripts/route.mjs --tier premium --video --configurator --type product
 node skills/premium-website-playbook/scripts/route.mjs --tier normal --type local-business --json > route.json
+node skills/premium-website-playbook/scripts/route.mjs --steps --tier premium   # just the step ids, to see the shape
+node skills/premium-website-playbook/scripts/route.mjs --step copy --tier premium  # only the step you are on: its 1-2 skills, its gate, what comes next
 node skills/premium-website-playbook/scripts/route.mjs --lint .     # all 24 skills present, named, linked; start commands exist
 ```
+
+**Context discipline.** This repo has 37 skills and 203 guides; no agent should hold them all at once.
+Work one step at a time: ask `route.mjs --step <id>` for the step you are on, open only the 1-2 skills
+it names, and do not open the next skill until the current gate has passed. Query the guidance CLI one
+pattern at a time (`npm run guidance -- search "..."`), never in bulk. If a build loses track of which
+step it is on, re-run `--steps` and resume from the first gate that has no fresh evidence.
 
 `examples/index.html` is the same router as a page: pick a tier and features, read the route.
 
@@ -400,7 +408,7 @@ Don't:
 
 | File | What |
 |---|---|
-| `scripts/route.mjs` | the router: route for a tier + features (text or `--json`), and `--lint` for the repo (24 skills present, frontmatter names match, all linked from this file, every `node ...` start command exists). Importable as an ES module. |
+| `scripts/route.mjs` | the router: route for a tier + features (text or `--json`), `--steps` / `--step <id>` for one step at a time (context discipline), and `--lint` for the repo (24 skills present, frontmatter names match, all linked from this file, every `node ...` start command exists). Importable as an ES module. |
 | `examples/index.html` | route planner page using the same module, with self-tests (`window.__skillTest`). |
 | `examples/brief.example.json` | a filled brief for a PREMIUM product site, the shape step 1 produces. |
 | `CREDITS.md` | sources |

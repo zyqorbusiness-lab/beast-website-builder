@@ -8,6 +8,8 @@ version: 1.1.0
 
 # Unique concepts
 
+> **Which skill when:** this one generates and filters *many* concept directions (concept library, pitch options, "give me 10 ideas"). For the ONE big idea of a single site and its storyboard, use [unique-idea-and-concept](../unique-idea-and-concept/).
+
 A concept is unique when somebody can describe it in one sentence **without naming its colours or fonts**:
 "the barber site where you swing the chair and the price list rotates with it". If the only way to tell two of
 your concepts apart is the palette, you made one concept twice.

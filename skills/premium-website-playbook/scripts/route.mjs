@@ -4,6 +4,8 @@
 // Works as a CLI (Node 18+, no install) and as an ES module in the browser (examples/index.html imports it).
 //   node route.mjs --tier premium --3d --video --configurator --type product
 //   node route.mjs --tier normal --type local-business --json
+//   node route.mjs --steps --tier premium   just the step ids (see the shape without loading skill details)
+//   node route.mjs --step copy --tier premium   only the step you are on: its skills, its gate, what comes next
 //   node route.mjs --lint ../../          (repo root: every skill folder exists, has SKILL.md, name matches, playbook links all)
 // MIT, Zyqor Studio (Sujon Hoque) 2026.
 
@@ -105,6 +107,23 @@ if (isCli) {
   const brief = { tier: val('--tier', 'advanced'), threeD: has('--3d') ? true : (has('--no-3d') ? false : undefined), video: has('--video'), glass: has('--glass'), configurator: has('--configurator'), type: val('--type', 'site') };
   if (brief.threeD === undefined) delete brief.threeD;
   const r = route(brief);
+  // Context discipline: print only the step you are on, so an agent following the route
+  // loads 1-2 skills at a time instead of all 24 (plus 203 guides) at once.
+  if (has('--steps')) {
+    for (const s of r) console.log(`${s.n}. ${s.id} - ${s.title} [${s.skills.map(k => k.name).join(', ')}]`);
+    process.exit(0);
+  }
+  const stepId = val('--step', null);
+  if (stepId) {
+    const s = r.find(x => x.id === stepId || String(x.n) === String(stepId));
+    if (!s) { console.error(`No step "${stepId}" in this route. Steps: ${r.map(x => x.id).join(', ')}`); process.exit(2); }
+    const next = r[s.n] || null; // r is 0-indexed, s.n is 1-based: r[s.n] is the step after
+    console.log(`Step ${s.n}/${r.length}: ${s.title} (${s.id})`);
+    for (const k of s.skills) console.log(`  skill: ${k.name}  ->  ${k.start}`);
+    console.log(`  gate:  ${s.gate}`);
+    console.log(next ? `Next when the gate passes: ${next.id} (${next.title}). Open its skill(s) only then.` : 'Last step. Ship it.');
+    process.exit(0);
+  }
   if (has('--json')) { console.log(JSON.stringify({ brief, steps: r }, null, 1)); process.exit(0); }
   console.log(`Route for a ${brief.tier.toUpperCase()} ${brief.type} (${r.length} steps)\n`);
   for (const s of r) {

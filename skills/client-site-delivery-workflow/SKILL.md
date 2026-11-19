@@ -8,6 +8,8 @@ version: 1.0.0
 
 # Client site delivery workflow
 
+> **Which skill when:** the end-to-end build-and-ship process lives here. The client-facing paperwork (brief form, tiers, templates) is [client-delivery-kit](../client-delivery-kit/); packaging a kit / zip / PDF for another AI agent is [kit-packaging-and-handoff](../kit-packaging-and-handoff/).
+
 A premium site can still be a bad delivery: built before the scope was agreed, launched with a placeholder in the
 footer, hosted on the studio's account so the client cannot touch it, or handed over with no record of which photos
 need credit. This skill is the order of operations that prevents all four. Every stage ends with **evidence**, not a

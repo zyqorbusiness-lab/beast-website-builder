@@ -8,6 +8,8 @@ version: 1.0.0
 
 # Asset sources and licence check
 
+> **Which skill when:** this is the short path for *where to get an asset and prove its licence* (source table + `licence-probe.mjs`). For the wider imagery craft (photo direction, grading into the palette, crops, knockouts, icons, Lottie), use [imagery-assets-licensing](../imagery-assets-licensing/).
+
 Real photos and real models are what make a concept read as a real product. They are also the easiest way to get a
 client a takedown letter. This skill is the short path: **find it on a source with a clear licence, prove the licence
 on the asset's own page, write the credit file, show the credit where the licence asks for it.** Nothing goes into

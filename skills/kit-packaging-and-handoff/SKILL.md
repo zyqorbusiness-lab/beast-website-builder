@@ -8,6 +8,8 @@ version: 1.0.0
 
 # Kit packaging and handoff (learned on Zyqor Motion Kit v5.2 -> v5.3, Nov 4 2026)
 
+> **Which skill when:** this one packages kits / zips / PDFs so another AI agent can run them losslessly. Delivering a client website (process and paperwork) is [client-site-delivery-workflow](../client-site-delivery-workflow/) and [client-delivery-kit](../client-delivery-kit/).
+
 What went wrong in v5.2 and what fixed it in v5.3:
 
 1. **Rules coverage table first.** List every rule the user ever gave (v5.3 had 49: EffectCraft-style text, never Blender for text,

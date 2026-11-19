@@ -8,6 +8,8 @@ version: 1.0.0
 
 # Imagery, assets and licensing
 
+> **Which skill when:** this one covers imagery end to end (find, licence, credit, direct, grade, crop, knock out). When you only need a trusted source plus a drafted credit file fast, [asset-sources-and-licence-check](../asset-sources-and-licence-check/) is the short path.
+
 Two of Sujon's standing rules shape every asset decision:
 
 - **Real, not decoration**: *"Real product photos/footage, not code-drawn visuals"*; *"Fake decorative graphics ki
