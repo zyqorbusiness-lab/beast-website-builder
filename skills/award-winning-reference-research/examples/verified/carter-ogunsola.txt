@@ -1,9 +1,11 @@
 AWARD VERIFICATION CARD
-  title:      Carter Ogunsola
+  status:     verified
   verified:   YES
+  title:      Carter Ogunsola
   award:      Site of the Day
+  evidence:   page <title> award suffix + jury box corroboration
   jury score: 7.51 / 10
   jury axes:  Design / Usability / Creativity / Content / Overall
   live site:  https://carterogunsola.com
   source:     https://www.awwwards.com/sites/carter-ogunsola
-  checked:    2026-11-21T01:39:50.987Z
+  checked:    2026-11-21T02:08:56.488Z

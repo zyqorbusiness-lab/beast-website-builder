@@ -3,7 +3,7 @@ name: award-winning-reference-research
 description: Collect and verify award-winning website references from the top award galleries - Awwwards first (Sujon's #1 source), then FWA, CSS Design Awards and the Webby Awards, with curated galleries labelled as curated (never "award-winning") - plus Pinterest for visual web-design references. Every award claim must be verified on the gallery's own award page or feed with the date checked; thumbnails, footer badges and search snippets never count as proof. Includes scripts/award-refs.mjs (collect verified winners lists and verify a single site's award and jury scores) and scripts/pin-log.mjs (log Pinterest references honestly: cover seen vs pin page opened).
 when_to_use: before designing any site ("take references from Pinterest and award-winning sites", "use the best award websites as reference"), step 2 of the premium-website-playbook, when a reference list must only contain verified winners, when judging whether a site really won something
 license: MIT (text and code). Sources credited in CREDITS.md.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Award-winning reference research
@@ -50,6 +50,15 @@ Rules that keep the ladder honest:
 4. **"Curated" is not "award-winning".** siteinspire / Land-book / Lapa Ninja / Minimal Gallery entries go in the
    list with the label `curated`; mixing them into the award tier is how fake credibility starts.
 5. **Scores are quoted, not invented.** If the page does not publish a number, the entry has no number.
+6. **Verification fails closed.** `award-refs.mjs verify` accepts only an https `awwwards.com/sites/<slug>` URL,
+   re-validates the final URL after any redirect, takes the award mark only from the page's `<title>` award suffix
+   (never from the string "Site of the Day" anywhere in the HTML), and passes only when the jury box corroborates
+   the mark. Anything else - wrong domain, rejected redirect, missing mark, mark without jury evidence, HTTP or
+   network failure - is a structured non-zero-exit result (`invalid-url`, `redirect-rejected`, `not-verified`,
+   `inconclusive`, `fetch-failed`), never a pass.
+7. **A collected list is candidates, not verdicts.** `collect` entries are archive/feed listing candidates labelled
+   `listing-candidate (not individually verified)`; an individual award claim stands only after `verify` passes for
+   that site. A source that answers HTTP 200 with nothing parseable is `parse-empty`, not `ok`.
 
 ## 2. Choosing the 3-5 references for a project
 
@@ -114,5 +123,7 @@ never-take lines, then into the playbook route. The summary that does not change
 ## Worked example
 
 `examples/REFERENCES.md` + `examples/award-refs.json`: a real `collect` run from 21 Nov 2026 (Awwwards SOTD archive
-page 1 + FWA winners feed; CSSDA attempted and recorded unavailable with its HTTP status). Two entries verified with
-`verify` in `examples/verified/`.
+page 1 + FWA winners feed; CSSDA attempted and recorded unavailable with its HTTP status). All 66 entries are
+listing candidates, not individually verified. Exactly two sites have individual verification cards in
+`examples/verified/` - each card records the source page URL, the scoped award-mark evidence (title suffix + jury
+box corroboration), the jury score, the live site URL and the check date from that page read.

@@ -1,6 +1,6 @@
 {
-  "collectedAt": "2026-11-21T01:39:40.563Z",
-  "policy": "Award claims only from the gallery own page/feed, read on collectedAt. Unavailable sources are recorded, never substituted or fabricated.",
+  "collectedAt": "2026-11-21T02:08:46.523Z",
+  "policy": "List entries are archive/feed listing candidates; an individual award claim stands only after `verify` passes on the gallery own page, read on checkedAt. Unavailable sources are recorded, never substituted or fabricated.",
   "sources": [
     {
       "source": "awwwards",
@@ -8,10 +8,12 @@
       "status": "ok",
       "error": null,
       "count": 31,
+      "listing": "archive listing candidates - individual awards not yet verified",
       "entries": [
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "197 Historias Ilustradas",
           "galleryUrl": "https://www.awwwards.com/sites/197-historias-ilustradas",
           "tags": [
@@ -31,6 +33,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Carter Ogunsola",
           "galleryUrl": "https://www.awwwards.com/sites/carter-ogunsola",
           "tags": [
@@ -52,6 +55,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "PSP Production",
           "galleryUrl": "https://www.awwwards.com/sites/psp-production",
           "tags": [
@@ -73,6 +77,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Sweet Tape",
           "galleryUrl": "https://www.awwwards.com/sites/sweet-tape",
           "tags": [
@@ -93,6 +98,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Bulletproof",
           "galleryUrl": "https://www.awwwards.com/sites/bulletproof",
           "tags": [
@@ -110,6 +116,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "SANTAL",
           "galleryUrl": "https://www.awwwards.com/sites/santal",
           "tags": [
@@ -130,6 +137,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Preymaker",
           "galleryUrl": "https://www.awwwards.com/sites/preymaker",
           "tags": [
@@ -148,6 +156,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Delta Cafés",
           "galleryUrl": "https://www.awwwards.com/sites/delta-cafes",
           "tags": [
@@ -166,6 +175,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "AUGE Experience",
           "galleryUrl": "https://www.awwwards.com/sites/auge-experience",
           "tags": [
@@ -187,6 +197,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Cyera AI Guardian",
           "galleryUrl": "https://www.awwwards.com/sites/cyera-ai-guardian",
           "tags": [
@@ -201,6 +212,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Creative Reference Library",
           "galleryUrl": "https://www.awwwards.com/sites/creative-reference-library",
           "tags": [
@@ -220,6 +232,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "ZIRKA Interceptor",
           "galleryUrl": "https://www.awwwards.com/sites/zirka-interceptor",
           "tags": [
@@ -239,6 +252,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Extrafazant",
           "galleryUrl": "https://www.awwwards.com/sites/extrafazant",
           "tags": [
@@ -257,6 +271,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Justin Jefferson",
           "galleryUrl": "https://www.awwwards.com/sites/justin-jefferson",
           "tags": [
@@ -278,6 +293,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "ViV",
           "galleryUrl": "https://www.awwwards.com/sites/viv",
           "tags": [
@@ -294,6 +310,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Agrumea Farm",
           "galleryUrl": "https://www.awwwards.com/sites/agrumea-farm",
           "tags": [
@@ -314,6 +331,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Grail",
           "galleryUrl": "https://www.awwwards.com/sites/grail",
           "tags": [
@@ -335,6 +353,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "DeepBook",
           "galleryUrl": "https://www.awwwards.com/sites/deepbook",
           "tags": [
@@ -352,6 +371,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Grids",
           "galleryUrl": "https://www.awwwards.com/sites/grids-1",
           "tags": [
@@ -372,6 +392,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Dont Look up game",
           "galleryUrl": "https://www.awwwards.com/sites/dont-look-up-game",
           "tags": [
@@ -393,6 +414,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "MECHA",
           "galleryUrl": "https://www.awwwards.com/sites/mecha",
           "tags": [
@@ -411,6 +433,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Spyker Cars",
           "galleryUrl": "https://www.awwwards.com/sites/spyker-cars",
           "tags": [
@@ -431,6 +454,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Unbelievably Crap",
           "galleryUrl": "https://www.awwwards.com/sites/unbelievably-crap",
           "tags": [
@@ -452,6 +476,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "G. Colombel — Portfolio 2026",
           "galleryUrl": "https://www.awwwards.com/sites/g-colombel-portfolio-2026",
           "tags": [
@@ -473,6 +498,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Awards Racing",
           "galleryUrl": "https://www.awwwards.com/sites/awards-racing",
           "tags": [
@@ -491,6 +517,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "A24",
           "galleryUrl": "https://www.awwwards.com/sites/a24",
           "tags": [
@@ -512,6 +539,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Forge Automotive",
           "galleryUrl": "https://www.awwwards.com/sites/forge-automotive",
           "tags": [
@@ -533,6 +561,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Brandon Yasin",
           "galleryUrl": "https://www.awwwards.com/sites/brandon-yasin",
           "tags": [
@@ -554,6 +583,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "ESR Bespoke",
           "galleryUrl": "https://www.awwwards.com/sites/esr-bespoke",
           "tags": [
@@ -572,6 +602,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Emotion Agency",
           "galleryUrl": "https://www.awwwards.com/sites/emotion-agency-1",
           "tags": [
@@ -593,6 +624,7 @@
         {
           "source": "awwwards",
           "award": "Site of the Day (Awwwards SOTD archive listing)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Ascension — Pegassi®",
           "galleryUrl": "https://www.awwwards.com/sites/ascension-pegassi-r",
           "tags": [
@@ -614,10 +646,12 @@
       "status": "ok",
       "error": null,
       "count": 35,
+      "listing": "feed listing candidates - individual awards not yet verified",
       "entries": [
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Your Perfect Partner",
           "galleryUrl": "https://thefwa.com/w/your-perfect-partner",
           "date": "Tue, 17 Nov 2026 00:00:00 GMT",
@@ -626,6 +660,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Incredible Space",
           "galleryUrl": "https://thefwa.com/w/incredible-space",
           "date": "Sat, 14 Nov 2026 00:00:00 GMT",
@@ -634,6 +669,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Route 66 - Centennial",
           "galleryUrl": "https://thefwa.com/w/route-66-centenniel",
           "date": "Fri, 13 Nov 2026 00:00:00 GMT",
@@ -642,6 +678,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "DOMINIK FOJCIK — PORTFOLIO",
           "galleryUrl": "https://thefwa.com/w/dominik-fojcik-portfolio",
           "date": "Thu, 12 Nov 2026 00:00:00 GMT",
@@ -650,6 +687,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Orchestrated",
           "galleryUrl": "https://thefwa.com/w/orchestrated",
           "date": "Wed, 11 Nov 2026 00:00:00 GMT",
@@ -658,6 +696,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Animatronic Rehearsal",
           "galleryUrl": "https://thefwa.com/w/animatronic-rehearsal",
           "date": "Tue, 10 Nov 2026 00:00:00 GMT",
@@ -666,6 +705,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Design Quiz",
           "galleryUrl": "https://thefwa.com/w/design-quiz",
           "date": "Mon, 09 Nov 2026 00:00:00 GMT",
@@ -674,6 +714,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "NebuLoFi",
           "galleryUrl": "https://thefwa.com/w/nebulofi",
           "date": "Sun, 08 Nov 2026 00:00:00 GMT",
@@ -682,6 +723,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Justin Jefferson",
           "galleryUrl": "https://thefwa.com/w/justin-jefferson",
           "date": "Sat, 07 Nov 2026 00:00:00 GMT",
@@ -690,6 +732,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "ORVAE",
           "galleryUrl": "https://thefwa.com/w/orvae",
           "date": "Fri, 06 Nov 2026 00:00:00 GMT",
@@ -698,6 +741,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Garuda 2026: The Locker Room",
           "galleryUrl": "https://thefwa.com/w/garuda-2026-the-locker-room",
           "date": "Thu, 05 Nov 2026 00:00:00 GMT",
@@ -706,6 +750,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Adrien Quéchon 2026 Website",
           "galleryUrl": "https://thefwa.com/w/adrien-quechon-2026-website",
           "date": "Wed, 04 Nov 2026 00:00:00 GMT",
@@ -714,6 +759,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Oh là là Ride",
           "galleryUrl": "https://thefwa.com/w/oh-la-la-ride",
           "date": "Mon, 02 Nov 2026 00:00:00 GMT",
@@ -722,6 +768,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "The Aviator",
           "galleryUrl": "https://thefwa.com/w/the-aviator",
           "date": "Sat, 31 Oct 2026 00:00:00 GMT",
@@ -730,6 +777,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "No Mercy Michel",
           "galleryUrl": "https://thefwa.com/w/no-mercy-michel",
           "date": "Fri, 30 Oct 2026 00:00:00 GMT",
@@ -738,6 +786,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Dream with AI",
           "galleryUrl": "https://thefwa.com/w/dream-with-ai",
           "date": "Wed, 28 Oct 2026 00:00:00 GMT",
@@ -746,6 +795,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "JUNKYARD KING | Chapter 3: The Other Side",
           "galleryUrl": "https://thefwa.com/w/junkyard-king-chapter-3-the-other-side",
           "date": "Sun, 25 Oct 2026 00:00:00 GMT",
@@ -754,6 +804,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "EXPERIENCE FUNTECH CREATIVITY",
           "galleryUrl": "https://thefwa.com/w/experience-funtech-creativity",
           "date": "Tue, 20 Oct 2026 00:00:00 GMT",
@@ -762,6 +813,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "The Lantern House",
           "galleryUrl": "https://thefwa.com/w/the-lantern-house",
           "date": "Fri, 16 Oct 2026 00:00:00 GMT",
@@ -770,6 +822,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Night Drive Racing Game",
           "galleryUrl": "https://thefwa.com/w/night-drive-racing-game",
           "date": "Tue, 13 Oct 2026 00:00:00 GMT",
@@ -778,6 +831,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Awards Racing",
           "galleryUrl": "https://thefwa.com/w/awards-racing",
           "date": "Thu, 01 Oct 2026 00:00:00 GMT",
@@ -786,6 +840,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Wipeout The Movie — Concept Trailer",
           "galleryUrl": "https://thefwa.com/w/wipeout-the-movie-concept-trailer",
           "date": "Tue, 29 Sep 2026 00:00:00 GMT",
@@ -794,6 +849,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Paodao",
           "galleryUrl": "https://thefwa.com/w/paodao",
           "date": "Mon, 28 Sep 2026 00:00:00 GMT",
@@ -802,6 +858,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Stuff by Kris Temmerman",
           "galleryUrl": "https://thefwa.com/w/stuff-by-kris-temmerman",
           "date": "Sun, 27 Sep 2026 00:00:00 GMT",
@@ -810,6 +867,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Sleep Well Creative",
           "galleryUrl": "https://thefwa.com/w/sleep-well-creative",
           "date": "Sat, 26 Sep 2026 00:00:00 GMT",
@@ -818,6 +876,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "illoca",
           "galleryUrl": "https://thefwa.com/w/illoca",
           "date": "Fri, 25 Sep 2026 00:00:00 GMT",
@@ -826,6 +885,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Santioni Spirits: The Notturno Experience",
           "galleryUrl": "https://thefwa.com/w/santioni-spirits-the-notturno-experience",
           "date": "Thu, 24 Sep 2026 00:00:00 GMT",
@@ -834,6 +894,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Why Zero",
           "galleryUrl": "https://thefwa.com/w/why-zero",
           "date": "Wed, 23 Sep 2026 00:00:00 GMT",
@@ -842,6 +903,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Lacoste Ace Breaker",
           "galleryUrl": "https://thefwa.com/w/lacoste-ace-breaker",
           "date": "Tue, 22 Sep 2026 00:00:00 GMT",
@@ -850,6 +912,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "IVRESS SPIN A TALE",
           "galleryUrl": "https://thefwa.com/w/ivress-spin-a-tale",
           "date": "Mon, 21 Sep 2026 00:00:00 GMT",
@@ -858,6 +921,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Shader Development Studio",
           "galleryUrl": "https://thefwa.com/w/shader-development-studio",
           "date": "Sun, 20 Sep 2026 00:00:00 GMT",
@@ -866,6 +930,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Oryzo AI",
           "galleryUrl": "https://thefwa.com/w/oryzo-ai",
           "date": "Sat, 19 Sep 2026 00:00:00 GMT",
@@ -874,6 +939,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Explore Primland",
           "galleryUrl": "https://thefwa.com/w/explore-primland",
           "date": "Fri, 18 Sep 2026 00:00:00 GMT",
@@ -882,6 +948,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "The Renaissance Edition",
           "galleryUrl": "https://thefwa.com/w/the-renaissance-edition",
           "date": "Wed, 16 Sep 2026 00:00:00 GMT",
@@ -890,6 +957,7 @@
         {
           "source": "fwa",
           "award": "FWA winner (The FWA winners feed)",
+          "verification": "listing-candidate (not individually verified)",
           "title": "Possession of Chess",
           "galleryUrl": "https://thefwa.com/w/possession-of-chess",
           "date": "Tue, 15 Sep 2026 00:00:00 GMT",
@@ -903,6 +971,7 @@
       "status": "unavailable",
       "error": "HTTP 502 - CSSDA often blocks scripts; verify in a browser",
       "count": 0,
+      "listing": "listing candidates - award category not verified by script",
       "entries": []
     }
   ]
