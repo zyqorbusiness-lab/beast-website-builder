@@ -6,37 +6,17 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const { parseAwwwardsListing, parseAwwwardsSite, parseFwaFeed, parseCssdaListing, validateAwwwardsSiteUrl, evaluateVerification, sourceStatus } = await import(join(ROOT, 'skills/award-winning-reference-research/scripts/award-refs.mjs'));
+const {
+  parseAwwwardsListing, parseAwwwardsSite, parseFwaFeed, parseCssdaListing,
+  validateAwwwardsSiteUrl, validateAwwwardsListingUrl, validateFwaFeedUrl, validateCssdaListingUrl,
+  evaluateVerification, sourceStatus, fetchGuarded,
+} = await import(join(ROOT, 'skills/award-winning-reference-research/scripts/award-refs.mjs'));
 const { pinIdFromUrl, renderMarkdown } = await import(join(ROOT, 'skills/award-winning-reference-research/scripts/pin-log.mjs'));
-
-// Fixture shapes mirror the live markup read on 21 Nov 2026.
-const AWW_LISTING = `
-<ul class="grid-cards js-ajax-entries">
-<li class="col-3 js-collectable" data-collectable-model-value="{&quot;collectableIdentifier&quot;:&quot;197-historias-ilustradas&quot;,&quot;id&quot;:66229,&quot;slug&quot;:&quot;197-historias-ilustradas&quot;,&quot;title&quot;:&quot;197 Historias Ilustradas&quot;,&quot;createdAt&quot;:1795132800,&quot;tags&quot;:[&quot;Animation&quot;,&quot;Clean&quot;],&quot;type&quot;:&quot;submission&quot;}"></li>
-<li class="col-3 js-collectable" data-collectable-model-value="{&quot;slug&quot;:&quot;carter-ogunsola&quot;,&quot;title&quot;:&quot;Carter Ogunsola O.&quot;,&quot;createdAt&quot;:1795220000,&quot;type&quot;:&quot;submission&quot;}"></li>
-<li class="col-3 js-collectable" data-collectable-model-value="{&quot;slug&quot;:&quot;not-a-site&quot;,&quot;title&quot;:&quot;Collection&quot;,&quot;type&quot;:&quot;collection&quot;}"></li>
-</ul>`;
-
-const AWW_SITE = `<!DOCTYPE html><html><head>
-<title>197 Historias Ilustradas - Awwwards SOTD</title>
-</head><body>
-<div class="box-score__note"><strong>7.3</strong></div>
-<div class="grid-score grid-score--titles" style="--score-cols: 5">
-  <div class="grid-score__item">Design</div>
-  <div class="grid-score__item">Usability</div>
-  <div class="grid-score__item">Creativity</div>
-  <div class="grid-score__item">Content</div>
-  <div class="grid-score__item">Overall</div>
-</div>
-<a class="toolbar-bts__item" href="https://www.facebook.com/awwwards" target="_blank" rel="noopener"></a>
-<a class="toolbar-bts__item" href="https://www.197historiasilustradas.com/" target="_blank" rel="noopener"></a>
-</body></html>`;
-
-const FWA_FEED = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel><title>The FWA — Winners</title>
-<item><title>Your Perfect Partner</title><link>https://thefwa.com/w/your-perfect-partner</link><pubDate>Tue, 17 Nov 2026 00:00:00 GMT</pubDate><description>By Parallel; Hyundai Middle East. An FWA Website winner.</description></item>
-<item><title>Second Winner</title><link>https://thefwa.com/w/second-winner</link><pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate><description>Another one.</description></item>
-</channel></rss>`;
+const {
+  AWW_LISTING, AWW_SITE, AWW_PAGE_SOTD_TEXT_ONLY, AWW_PAGE_MARK_NO_JURY,
+  AWW_TITLE_SUFFIX_TRAP, AWW_UNRELATED_SCORE, AWW_UNRECOGNIZED_AXES, AWW_OUT_OF_RANGE_SCORE,
+  FWA_FEED, CSSDA_LISTING,
+} = await import(join(ROOT, 'tests/fixtures/award-refs-pages.mjs'));
 
 test('parseAwwwardsListing reads submission cards, skips non-submissions', () => {
   const cards = parseAwwwardsListing(AWW_LISTING);
@@ -79,7 +59,7 @@ test('parseFwaFeed reads winners from the RSS feed', () => {
 });
 
 test('parseCssdaListing extracts site links without inventing award categories', () => {
-  const items = parseCssdaListing('<a href="https://www.cssdesignawards.com/sites/some-winner/123">x</a>');
+  const items = parseCssdaListing(CSSDA_LISTING);
   assert.equal(items.length, 1);
   assert.match(items[0].award, /not verified/);
 });
@@ -98,29 +78,14 @@ test('pin-log markdown states the honesty policy and review level', () => {
 
 // --- 21 Nov 2026 audit regression tests: verification must fail closed ---
 
-// A page that mentions "Site of the Day" anywhere in raw HTML (nav, related
-// lists, footer) but has no award mark in its title evidence is NOT verified,
-// even when a jury box is present.
-const AWW_PAGE_SOTD_TEXT_ONLY = `<!DOCTYPE html><html><head>
-<title>Some Random Site - Awwwards</title>
-</head><body>
-<nav><a href="/websites/sites_of_the_day/">Site of the Day</a></nav>
-<div class="box-score__note"><strong>6.9</strong></div>
-<footer>Previous Site of the Day winners</footer>
-</body></html>`;
-
-// A page whose title carries the award mark but which has no jury evidence:
-// a mark alone never passes.
-const AWW_PAGE_MARK_NO_JURY = `<!DOCTYPE html><html><head>
-<title>Half Evidence - Awwwards SOTD</title>
-</head><body><p>No jury box here.</p></body></html>`;
-
 test('parseAwwwardsSite ignores "Site of the Day" text outside the title evidence', () => {
   const v = parseAwwwardsSite(AWW_PAGE_SOTD_TEXT_ONLY, 'https://www.awwwards.com/sites/some-random-site');
   assert.equal(v.verified, false);
   assert.deepEqual(v.awardMarks, []);
   assert.equal(v.markEvidence, null);
-  assert.equal(v.juryScore, 6.9); // jury data alone is not an award mark either
+  // an orphan box-score__note outside the jury box is not jury evidence either
+  assert.equal(v.juryScore, null);
+  assert.equal(v.corroborated, false);
 });
 
 test('parseAwwwardsSite does not pass on a title mark without jury corroboration', () => {
@@ -128,6 +93,36 @@ test('parseAwwwardsSite does not pass on a title mark without jury corroboration
   assert.ok(v.awardMarks.includes('Site of the Day'));
   assert.equal(v.corroborated, false);
   assert.equal(v.verified, false);
+});
+
+test('parseAwwwardsSite requires an exact end-anchored title suffix', () => {
+  // "... - Awwwards SOTD archive" is not the Site of the Day mark, even with
+  // valid jury structures on the page
+  const trap = parseAwwwardsSite(AWW_TITLE_SUFFIX_TRAP, 'https://www.awwwards.com/sites/not-a-winner');
+  assert.deepEqual(trap.awardMarks, []);
+  assert.equal(trap.verified, false);
+  // the exact suffix still matches, with or without trailing whitespace
+  const exact = parseAwwwardsSite('<html><head><title>Site X - Awwwards SOTY </title></head><body>' + AWW_SITE.split('<body>')[1], 'https://www.awwwards.com/sites/site-x');
+  assert.ok(exact.awardMarks.includes('Site of the Year'));
+  assert.equal(exact.verified, true);
+});
+
+test('parseAwwwardsSite does not corroborate from unrelated scores or axes', () => {
+  // an orphan box-score__note outside the class="box-score" jury box
+  const orphan = parseAwwwardsSite(AWW_UNRELATED_SCORE, 'https://www.awwwards.com/sites/orphan-score');
+  assert.equal(orphan.juryScore, null);
+  assert.equal(orphan.corroborated, false);
+  assert.equal(orphan.verified, false);
+  // grid-score labels that are not the recognised jury axes
+  const wrongAxes = parseAwwwardsSite(AWW_UNRECOGNIZED_AXES, 'https://www.awwwards.com/sites/wrong-axes');
+  assert.deepEqual(wrongAxes.juryColumns, []);
+  assert.equal(wrongAxes.corroborated, false);
+  assert.equal(wrongAxes.verified, false);
+  // a jury-box score outside the valid 0-10 range
+  const badScore = parseAwwwardsSite(AWW_OUT_OF_RANGE_SCORE, 'https://www.awwwards.com/sites/bad-score');
+  assert.equal(badScore.juryScore, null);
+  assert.equal(badScore.corroborated, false);
+  assert.equal(badScore.verified, false);
 });
 
 test('validateAwwwardsSiteUrl accepts only https awwwards.com /sites/<slug> pages', () => {
@@ -140,6 +135,19 @@ test('validateAwwwardsSiteUrl accepts only https awwwards.com /sites/<slug> page
   assert.equal(validateAwwwardsSiteUrl('https://www.awwwards.com/websites/sites_of_the_day/').ok, false);
   assert.equal(validateAwwwardsSiteUrl('https://www.awwwards.com/').ok, false);
   assert.equal(validateAwwwardsSiteUrl('not a url').ok, false);
+});
+
+test('collect source validators pin each source to its own host and path', () => {
+  assert.equal(validateAwwwardsListingUrl('https://www.awwwards.com/websites/sites_of_the_day/').ok, true);
+  assert.equal(validateAwwwardsListingUrl('https://www.awwwards.com/websites/sites_of_the_day/?page=2').ok, true);
+  assert.equal(validateAwwwardsListingUrl('https://www.awwwards.com/sites/some-site').ok, false);
+  assert.equal(validateAwwwardsListingUrl('https://evil.example/websites/sites_of_the_day/').ok, false);
+  assert.equal(validateFwaFeedUrl('https://thefwa.com/feed/winners.xml').ok, true);
+  assert.equal(validateFwaFeedUrl('https://thefwa.com/w/some-winner').ok, false);
+  assert.equal(validateFwaFeedUrl('https://evil-thefwa.com/feed/winners.xml').ok, false);
+  assert.equal(validateCssdaListingUrl('https://www.cssdesignawards.com/website-of-the-day/').ok, true);
+  assert.equal(validateCssdaListingUrl('https://www.cssdesignawards.com/sites/some-winner/123').ok, false);
+  assert.equal(validateCssdaListingUrl('http://www.cssdesignawards.com/website-of-the-day/').ok, false);
 });
 
 test('evaluateVerification rejects redirects off awwwards.com or off the /sites/ page type', () => {
@@ -187,6 +195,10 @@ test('evaluateVerification verifies only a real winner page through the full cha
   const textOnly = evaluateVerification({ inputUrl: 'https://www.awwwards.com/sites/some-random-site', httpOk: true, httpStatus: 200, finalUrl: 'https://www.awwwards.com/sites/some-random-site', body: AWW_PAGE_SOTD_TEXT_ONLY });
   assert.equal(textOnly.status, 'not-verified');
   assert.equal(textOnly.verified, false);
+  // a non-anchored title suffix does not verify even with jury structures
+  const trap = evaluateVerification({ inputUrl: 'https://www.awwwards.com/sites/not-a-winner', httpOk: true, httpStatus: 200, finalUrl: 'https://www.awwwards.com/sites/not-a-winner', body: AWW_TITLE_SUFFIX_TRAP });
+  assert.equal(trap.status, 'not-verified');
+  assert.equal(trap.verified, false);
 });
 
 test('sourceStatus maps HTTP 200 with zero parsed entries to parse-empty, never ok', () => {
@@ -201,5 +213,75 @@ test('sourceStatus maps HTTP 200 with zero parsed entries to parse-empty, never 
 test('listing parsers label entries as candidates, not individually verified', () => {
   for (const e of parseAwwwardsListing(AWW_LISTING)) assert.match(e.verification, /not individually verified/);
   for (const e of parseFwaFeed(FWA_FEED)) assert.match(e.verification, /not individually verified/);
-  for (const e of parseCssdaListing('<a href="https://www.cssdesignawards.com/sites/some-winner/123">x</a>')) assert.match(e.verification, /not individually verified/);
+  for (const e of parseCssdaListing(CSSDA_LISTING)) assert.match(e.verification, /not individually verified/);
+});
+
+// --- fetchGuarded: validation happens BEFORE dispatch, hop by hop ---
+
+function recordingFetch(routes) {
+  const calls = [];
+  const fetchImpl = async (url) => {
+    calls.push(url);
+    const r = routes[url];
+    if (!r) throw new Error(`no route for ${url}`);
+    if (r.networkError) throw new Error(r.networkError);
+    return {
+      ok: r.status >= 200 && r.status < 300,
+      status: r.status,
+      headers: { get: (n) => (String(n).toLowerCase() === 'location' ? r.location ?? null : null) },
+      text: async () => r.body ?? '',
+    };
+  };
+  return { fetchImpl, calls };
+}
+
+test('fetchGuarded never dispatches a request for an invalid initial URL', async () => {
+  const { fetchImpl, calls } = recordingFetch({});
+  const r = await fetchGuarded('https://evil.example/sites/x', { validateHop: validateAwwwardsSiteUrl, fetchImpl });
+  assert.equal(r.dispatchBlocked, true);
+  assert.equal(r.stage, 'initial');
+  assert.equal(calls.length, 0);
+});
+
+test('fetchGuarded rejects an off-domain redirect target without dispatching it', async () => {
+  const { fetchImpl, calls } = recordingFetch({
+    'https://www.awwwards.com/sites/x': { status: 302, location: 'https://evil.example/sites/x' },
+  });
+  const r = await fetchGuarded('https://www.awwwards.com/sites/x', { validateHop: validateAwwwardsSiteUrl, fetchImpl });
+  assert.equal(r.dispatchBlocked, true);
+  assert.equal(r.stage, 'redirect');
+  assert.equal(r.blockedTarget, 'https://evil.example/sites/x');
+  // the only request dispatched was the original URL; the target was never fetched
+  assert.deepEqual(calls, ['https://www.awwwards.com/sites/x']);
+});
+
+test('fetchGuarded rejects a redirect to a non-/sites/ awwwards.com page', async () => {
+  const { fetchImpl, calls } = recordingFetch({
+    'https://www.awwwards.com/sites/x': { status: 301, location: 'https://www.awwwards.com/' },
+  });
+  const r = await fetchGuarded('https://www.awwwards.com/sites/x', { validateHop: validateAwwwardsSiteUrl, fetchImpl });
+  assert.equal(r.dispatchBlocked, true);
+  assert.equal(r.stage, 'redirect');
+  assert.deepEqual(calls, ['https://www.awwwards.com/sites/x']);
+});
+
+test('fetchGuarded follows a valid same-source redirect and records the chain', async () => {
+  const { fetchImpl, calls } = recordingFetch({
+    'https://awwwards.com/sites/x': { status: 301, location: '/sites/x/' },
+    'https://awwwards.com/sites/x/': { status: 200, body: '<html></html>' },
+  });
+  const r = await fetchGuarded('https://awwwards.com/sites/x', { validateHop: validateAwwwardsSiteUrl, fetchImpl });
+  assert.equal(r.ok, true);
+  assert.equal(r.url, 'https://awwwards.com/sites/x/');
+  assert.deepEqual(r.chain, [{ from: 'https://awwwards.com/sites/x', to: 'https://awwwards.com/sites/x/' }]);
+  assert.deepEqual(calls, ['https://awwwards.com/sites/x', 'https://awwwards.com/sites/x/']);
+});
+
+test('fetchGuarded stops redirect loops instead of following forever', async () => {
+  const routes = {};
+  for (let i = 0; i <= 8; i++) routes[`https://www.awwwards.com/sites/loop-${i}`] = { status: 302, location: `https://www.awwwards.com/sites/loop-${i + 1}` };
+  const { fetchImpl, calls } = recordingFetch(routes);
+  const r = await fetchGuarded('https://www.awwwards.com/sites/loop-0', { validateHop: validateAwwwardsSiteUrl, fetchImpl });
+  assert.match(r.error, /too many redirects/);
+  assert.ok(calls.length <= 7);
 });

@@ -8,4 +8,4 @@ AWARD VERIFICATION CARD
   jury axes:  Design / Usability / Creativity / Content / Overall
   live site:  https://carterogunsola.com
   source:     https://www.awwwards.com/sites/carter-ogunsola
-  checked:    2026-11-21T02:08:56.488Z
+  checked:    2026-11-21T02:26:50.812Z

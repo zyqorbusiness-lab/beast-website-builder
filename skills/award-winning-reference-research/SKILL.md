@@ -3,7 +3,7 @@ name: award-winning-reference-research
 description: Collect and verify award-winning website references from the top award galleries - Awwwards first (Sujon's #1 source), then FWA, CSS Design Awards and the Webby Awards, with curated galleries labelled as curated (never "award-winning") - plus Pinterest for visual web-design references. Every award claim must be verified on the gallery's own award page or feed with the date checked; thumbnails, footer badges and search snippets never count as proof. Includes scripts/award-refs.mjs (collect verified winners lists and verify a single site's award and jury scores) and scripts/pin-log.mjs (log Pinterest references honestly: cover seen vs pin page opened).
 when_to_use: before designing any site ("take references from Pinterest and award-winning sites", "use the best award websites as reference"), step 2 of the premium-website-playbook, when a reference list must only contain verified winners, when judging whether a site really won something
 license: MIT (text and code). Sources credited in CREDITS.md.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Award-winning reference research
@@ -50,15 +50,28 @@ Rules that keep the ladder honest:
 4. **"Curated" is not "award-winning".** siteinspire / Land-book / Lapa Ninja / Minimal Gallery entries go in the
    list with the label `curated`; mixing them into the award tier is how fake credibility starts.
 5. **Scores are quoted, not invented.** If the page does not publish a number, the entry has no number.
-6. **Verification fails closed.** `award-refs.mjs verify` accepts only an https `awwwards.com/sites/<slug>` URL,
-   re-validates the final URL after any redirect, takes the award mark only from the page's `<title>` award suffix
-   (never from the string "Site of the Day" anywhere in the HTML), and passes only when the jury box corroborates
-   the mark. Anything else - wrong domain, rejected redirect, missing mark, mark without jury evidence, HTTP or
-   network failure - is a structured non-zero-exit result (`invalid-url`, `redirect-rejected`, `not-verified`,
-   `inconclusive`, `fetch-failed`), never a pass.
+6. **Verification fails closed, before the network.** `award-refs.mjs verify` validates the input URL before any
+   request is dispatched: only an https `awwwards.com/sites/<slug>` page is ever fetched. Redirects are followed
+   one hop at a time and every redirect target is validated *before the request to it is dispatched* - an
+   off-domain or off-`/sites/` target is rejected without being fetched. The award mark counts only from an exact,
+   end-anchored `<title>` suffix (`<name> - Awwwards SOTD/SOTM/SOTY`); a longer suffix like "Awwwards SOTD archive"
+   is not a mark, and award text anywhere else in the HTML never is. A mark alone never passes: jury corroboration
+   must come from the award's own jury structures - the overall score (0-10) inside the `class="box-score"` jury
+   box, or the recognised jury axes (Design / Usability / Creativity / Content / Overall) inside the
+   `id="jury_votes"` section - never from an orphan `box-score__note` number or an arbitrary grid-score row
+   elsewhere on the page. Anything else - wrong domain, rejected redirect, missing mark, mark without jury
+   evidence, HTTP or network failure - is a structured non-zero-exit result (`invalid-url`, `redirect-rejected`,
+   `not-verified`, `inconclusive`, `fetch-failed`), never a pass.
 7. **A collected list is candidates, not verdicts.** `collect` entries are archive/feed listing candidates labelled
    `listing-candidate (not individually verified)`; an individual award claim stands only after `verify` passes for
-   that site. A source that answers HTTP 200 with nothing parseable is `parse-empty`, not `ok`.
+   that site. A source that answers HTTP 200 with nothing parseable is `parse-empty`, not `ok`. Every source fetch
+   is validated the same way as `verify`: the final URL must stay on the source's own host and listing/feed path,
+   or the source is recorded `redirect-rejected` and the redirected content is never parsed as source data.
+8. **Invalid options stop before the network.** `--pages` must be a positive integer, `--source` one of
+   `all|awwwards|fwa|cssda`, `--delay` a non-negative number; anything else exits 2 without a single request.
+   Exit codes: `verify` 0 verified / 1 not verified, fetch failure or rejected redirect / 2 invalid input;
+   `collect` 0 when at least one requested source collected entries (per-source statuses record partial
+   failures), 1 when every requested source failed, 2 for invalid options.
 
 ## 2. Choosing the 3-5 references for a project
 

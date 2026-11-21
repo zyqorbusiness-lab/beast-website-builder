@@ -1,6 +1,6 @@
 # Award-winning website references
 
-Collected 2026-11-21T02:08:46.523Z by `award-refs.mjs collect`. List entries are archive/feed listing candidates; an individual award claim stands only after `verify` passes on the gallery own page, read on checkedAt. Unavailable sources are recorded, never substituted or fabricated.
+Collected 2026-11-21T02:26:57.231Z by `award-refs.mjs collect`. List entries are archive/feed listing candidates; an individual award claim stands only after `verify` passes on the gallery own page, read on checkedAt. Unavailable sources are recorded, never substituted or fabricated.
 
 **Every entry below is an archive/feed listing candidate.** Its individual award is NOT yet verified;
 run `award-refs.mjs verify <galleryUrl>` for each shortlisted site before calling it award-winning.
