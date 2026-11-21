@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // route.mjs: the premium-website-playbook router. Given a brief (tier + features), prints the ordered route through the
-// 24 Zyqor skills: which skill to open at each step, the command to run, and the gate that must pass before moving on.
+// 25 Zyqor skills: which skill to open at each step, the command to run, and the gate that must pass before moving on.
 // Works as a CLI (Node 18+, no install) and as an ES module in the browser (examples/index.html imports it).
 //   node route.mjs --tier premium --3d --video --configurator --type product
 //   node route.mjs --tier normal --type local-business --json
@@ -13,6 +13,7 @@ export const SKILLS = [
   // name, phase, one-line job, the command or file to start with
   ['premium-website-playbook', 'all', 'This file: the order of work and the gates', 'node skills/premium-website-playbook/scripts/route.mjs --tier <t>'],
   ['client-site-delivery-workflow', 'brief', 'Intake, scope, brief, staging, handover', 'node skills/client-site-delivery-workflow/scripts/brief.mjs --new'],
+  ['award-winning-reference-research', 'research', 'Collect verified award-winning references (Awwwards first) + Pinterest, dated and honest', 'node skills/award-winning-reference-research/scripts/award-refs.mjs collect --out work/references'],
   ['award-site-teardown-method', 'research', 'Study 3-5 reference sites and extract techniques, not content', 'node skills/award-site-teardown-method/scripts/teardown.mjs <url>'],
   ['unique-idea-and-concept', 'idea', 'The one big idea sentence, metaphor, chapters', 'node skills/unique-idea-and-concept/scripts/storyboard.mjs'],
   ['unique-concepts', 'idea', 'Idea generators: matrix, constraint cards, inversion', 'skills/unique-concepts/SKILL.md §1-6'],
@@ -40,7 +41,7 @@ export const SKILLS = [
 // Gates: what must be true before leaving each step (from Sujon's Drive Q1-Q13 and the skills' own checklists).
 const STEPS = [
   { id: 'brief', title: 'Intake and brief', skills: ['client-site-delivery-workflow'], gate: 'Brief written: goal, audience, tier, pages, must-haves, assets owned, deadline, 5-line token summary placeholder. Client said yes to scope.' },
-  { id: 'research', title: 'Reference teardown', skills: ['award-site-teardown-method'], gate: '3-5 teardown cards saved; each says what to take (structure, rhythm, choreography) and what never to take (logo, copy, photos).' },
+  { id: 'research', title: 'Reference teardown', skills: ['award-winning-reference-research', 'award-site-teardown-method'], gate: 'References collected from verified award pages/feeds (Awwwards first) with check dates; 3-5 teardown cards saved, each saying what to take (structure, rhythm, choreography) and what never to take (logo, copy, photos).' },
   { id: 'idea', title: 'The one idea', skills: ['unique-idea-and-concept', 'unique-concepts'], gate: 'One idea sentence "[product] as [thing/place]" passes storyboard.mjs; 3-7 chapters named; 3 hand-made signature details listed.' },
   { id: 'tier', title: 'Tier and budgets', skills: ['premium-tiers-normal-advanced-premium'], gate: 'Tier written down with its weight budget, frame-rate target and feature list. Nothing outside the tier is promised.' },
   { id: 'palette', title: 'Palette', skills: ['colour-systems'], gate: 'palette.mjs --check prints VERDICT PASS; palette sentence in notes.' },
@@ -108,7 +109,7 @@ if (isCli) {
   if (brief.threeD === undefined) delete brief.threeD;
   const r = route(brief);
   // Context discipline: print only the step you are on, so an agent following the route
-  // loads 1-2 skills at a time instead of all 24 (plus 203 guides) at once.
+  // loads 1-2 skills at a time instead of all 25 (plus 203 guides) at once.
   if (has('--steps')) {
     for (const s of r) console.log(`${s.n}. ${s.id} - ${s.title} [${s.skills.map(k => k.name).join(', ')}]`);
     process.exit(0);

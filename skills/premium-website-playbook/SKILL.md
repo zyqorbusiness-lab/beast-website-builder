@@ -1,6 +1,6 @@
 ---
 name: premium-website-playbook
-description: The master skill. How an AI agent goes from a one-line brief to a unique, premium, award-level website, in order - intake and brief, reference teardown, the one idea, tier and budgets, palette, type, layout, copy, assets, motion, scroll video, 3D, interaction, phone parity, performance, accessibility, SEO, security, QA, deploy and handover - naming which of the 24 Zyqor skills to open at each step, the command to run, and the gate that must pass before the next step. Includes scripts/route.mjs (prints the route for a tier and feature set, and lints that all 24 skills exist and are linked) and a route planner page.
+description: The master skill. How an AI agent goes from a one-line brief to a unique, premium, award-level website, in order - intake and brief, reference teardown, the one idea, tier and budgets, palette, type, layout, copy, assets, motion, scroll video, 3D, interaction, phone parity, performance, accessibility, SEO, security, QA, deploy and handover - naming which of the 25 Zyqor skills to open at each step, the command to run, and the gate that must pass before the next step. Includes scripts/route.mjs (prints the route for a tier and feature set, and lints that all 25 skills exist and are linked) and a route planner page.
 when_to_use: "build me a premium website", "make a site for this client", any new website from scratch, when you do not know which skill to open next, before quoting a tier, when an agent is about to start coding without a brief
 license: MIT (text and code). Sources credited in CREDITS.md.
 version: 1.0.0
@@ -8,7 +8,7 @@ version: 1.0.0
 
 # Premium website playbook (start here)
 
-This is the map. The other 23 skills in this folder each teach one craft in depth; this one says **which craft, in
+This is the map. The other 24 skills in this folder each teach one craft in depth; this one says **which craft, in
 which order, and what must be true before moving on**. An agent that follows it does not skip the brief, does not
 start with a hero animation, and does not ship anything it has not checked.
 
@@ -25,10 +25,10 @@ node skills/premium-website-playbook/scripts/route.mjs --tier premium --video --
 node skills/premium-website-playbook/scripts/route.mjs --tier normal --type local-business --json > route.json
 node skills/premium-website-playbook/scripts/route.mjs --steps --tier premium   # just the step ids, to see the shape
 node skills/premium-website-playbook/scripts/route.mjs --step copy --tier premium  # only the step you are on: its 1-2 skills, its gate, what comes next
-node skills/premium-website-playbook/scripts/route.mjs --lint .     # all 24 skills present, named, linked; start commands exist
+node skills/premium-website-playbook/scripts/route.mjs --lint .     # all 25 skills present, named, linked; start commands exist
 ```
 
-**Context discipline.** This repo has 37 skills and 203 guides; no agent should hold them all at once.
+**Context discipline.** This repo has 38 skills and 203 guides; no agent should hold them all at once.
 Work one step at a time: ask `route.mjs --step <id>` for the step you are on, open only the 1-2 skills
 it names, and do not open the next skill until the current gate has passed. Query the guidance CLI one
 pattern at a time (`npm run guidance -- search "..."`), never in bulk. If a build loses track of which
@@ -67,7 +67,7 @@ Zyqor Studio's rule (Sujon, 30 Oct 2026): *"PC me no compromise, ek dam best."*
 | # | Step | Open this skill | You leave with | Gate (must pass) |
 |---|---|---|---|---|
 | 1 | Intake and brief | [`client-site-delivery-workflow`](../client-site-delivery-workflow/) | brief.json + scope the client said yes to | brief has goal, audience, tier, pages, assets, deadline |
-| 2 | Reference teardown | [`award-site-teardown-method`](../award-site-teardown-method/) | 3-5 teardown cards | each card says take / never take |
+| 2 | Reference teardown | [`award-winning-reference-research`](../award-winning-reference-research/), [`award-site-teardown-method`](../award-site-teardown-method/) | verified reference list + 3-5 teardown cards | awards verified on the gallery page; each card says take / never take |
 | 3 | The one idea | [`unique-idea-and-concept`](../unique-idea-and-concept/), [`unique-concepts`](../unique-concepts/) | idea sentence, chapters, 3 signature details | `storyboard.mjs` passes |
 | 4 | Tier and budgets | [`premium-tiers-normal-advanced-premium`](../premium-tiers-normal-advanced-premium/) | tier, weight budget, fps target | nothing outside the tier promised |
 | 5 | Palette | [`colour-systems`](../colour-systems/) | canvas / ink / accent tokens | `palette.mjs --check` VERDICT PASS |
@@ -87,7 +87,7 @@ Zyqor Studio's rule (Sujon, 30 Oct 2026): *"PC me no compromise, ek dam best."*
 | 19 | QA | [`qa-harness`](../qa-harness/) | screenshots, results.json | 0 errors at 1440/390/360 + reduced |
 | 20 | Deploy and handover | [`client-site-delivery-workflow`](../client-site-delivery-workflow/) | live URL, Search Console, handover note | live checks pass on the real URL |
 
-This file is [`premium-website-playbook`](../premium-website-playbook/) itself. That is all 24 skills.
+This file is [`premium-website-playbook`](../premium-website-playbook/) itself. That is all 25 skills.
 
 **Order matters for three reasons.** Copy comes before motion because animation is choreography for words and
 images that must already exist (scroll-world times every section's copy to its segment: the first greets on landing and
@@ -142,9 +142,12 @@ for the 5-line token summary (section 5). `scripts/brief.mjs --new` in the deliv
 
 Gate: the client (or Sujon, for concept work) said yes to the scope in writing.
 
-### Step 2. Reference teardown  ->  `award-site-teardown-method`
+### Step 2. Reference teardown  ->  `award-winning-reference-research`, `award-site-teardown-method`
 
-Pick 3-5 references: at least two outside the client's industry (that is where the unexpected idea comes from), at
+Collect the pool first with `award-winning-reference-research`: Awwwards first (Sujon's #1), then FWA, CSSDA and
+the Webby Awards, plus Pinterest for visual ideas. Every award claim verified on the gallery's own page or feed
+with the check date (`award-refs.mjs collect`, then `verify` per shortlisted site); curated galleries are labelled
+curated, never "award-winning"; a gallery that is down is recorded as down, never substituted. Then pick 3-5 references: at least two outside the client's industry (that is where the unexpected idea comes from), at
 least one current Awwwards Site of the Day or Site of the Year. Tear each down with the card in that skill: idea,
 structure, palette (approximate hex), type, motion (labelled *inference* when seen only in a still, Drive Q3),
 technique stack, what to take (structure, rhythm, hierarchy, choreography) and what never to take (logo, brand,

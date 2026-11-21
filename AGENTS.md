@@ -16,7 +16,7 @@ coding agent. If you are that agent, read these first, in this order:
 
 ## Layout
 
-- `skills/`: 37 self-contained design and build skills. Start with
+- `skills/`: 38 self-contained design and build skills. Start with
   `skills/premium-website-playbook/`.
 - `components/`: 14 reusable UI components (plain HTML/CSS/JS, keyboard,
   touch, reduced motion handled). Start from one before writing from scratch.

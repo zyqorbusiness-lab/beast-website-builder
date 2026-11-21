@@ -28,9 +28,18 @@ tier (normal / advanced / premium) and what is explicitly out of scope.
 
 ## Phase 1 - Idea and concept
 
-**Skills:** `unique-idea-and-concept`, `unique-concepts`.
-**Do:** one big idea ("[product] as [thing or place]"), its metaphor, story
-arc and chapters. Check the idea sentence:
+**Skills:** `award-winning-reference-research`, `award-site-teardown-method`, `unique-idea-and-concept`, `unique-concepts`.
+**Do:** collect the reference pool first - verified award winners (Awwwards
+first, then FWA / CSSDA / Webby Awards, check dates recorded) plus Pinterest
+visual references - tear down 3-5 of them, then write the one big idea
+("[product] as [thing or place]"), its metaphor, story arc and chapters:
+
+```bash
+node skills/award-winning-reference-research/scripts/award-refs.mjs collect --out work/references
+node skills/award-winning-reference-research/scripts/award-refs.mjs verify <awwwards-site-url>
+```
+
+Check the idea sentence:
 
 ```bash
 node skills/unique-idea-and-concept/scripts/storyboard.mjs <idea>
